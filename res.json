@@ -1,0 +1,60 @@
+{
+  "nodeName": "Anterior Pelvic Tilt",
+  "children": [
+    {
+      "nodeName": "Definition",
+      "children": [
+        {
+          "nodeName": "Postural pattern",
+          "children": [
+            { "nodeName": "Forward tipped pelvis" },
+            { "nodeName": "Hips pushed out back" },
+            { "nodeName": "Abdomen sticks out forward" },
+            { "nodeName": "Slight curve in lower back" }
+          ]
+        }
+      ]
+    },
+    {
+      "nodeName": "Causes",
+      "children": [
+        { "nodeName": "Extended periods of sitting" },
+        {
+          "nodeName": "Overactive muscles",
+          "children": [
+            { "nodeName": "Hip flexors" },
+            { "nodeName": "Erector spinae" }
+          ]
+        },
+        {
+          "nodeName": "Underactive muscles",
+          "children": [{ "nodeName": "Abdominals" }, { "nodeName": "Glutes" }]
+        }
+      ]
+    },
+    {
+      "nodeName": "Effects",
+      "children": [
+        { "nodeName": "Stress on lower back" },
+        { "nodeName": "Inhibits force production" },
+        { "nodeName": "Lower back tightness and pain" },
+        { "nodeName": "Prevents proper glute activation" }
+      ]
+    },
+    {
+      "nodeName": "Correction",
+      "children": [
+        { "nodeName": "Learn to posteriorly tilt pelvis" },
+        {
+          "nodeName": "Strengthen underactive muscles",
+          "children": [{ "nodeName": "Abdominals" }, { "nodeName": "Glutes" }]
+        },
+        {
+          "nodeName": "Stretch overactive muscles",
+          "children": [{ "nodeName": "Hip flexors" }]
+        },
+        { "nodeName": "Maintain neutral pelvis in daily life" }
+      ]
+    }
+  ]
+}
