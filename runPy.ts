@@ -1,6 +1,6 @@
 const { spawn } = require("child_process");
 
-const pythonProcess = spawn("python", ["script.py"]);
+const pythonProcess = spawn("python", ["get-transcript.py"]);
 
 pythonProcess.stdout.on("data", (data) => {
   console.log(`Python Output: ${data}`);

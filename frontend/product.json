@@ -1,0 +1,1087 @@
+{
+  "nodes": [
+    {
+      "id": "LSD",
+      "data": {
+        "label": "LSD"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?",
+      "data": {
+        "label": "What is LSD?"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Physical_description",
+      "data": {
+        "label": "Physical description"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Physical_description-Odourless_white_powder",
+      "data": {
+        "label": "Odourless white powder"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Physical_description-Often_diluted",
+      "data": {
+        "label": "Often diluted"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Methods_of_consumption",
+      "data": {
+        "label": "Methods of consumption"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Methods_of_consumption-Swallowed/dissolved_under_tongue",
+      "data": {
+        "label": "Swallowed/dissolved under tongue"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Methods_of_consumption-Sniffed",
+      "data": {
+        "label": "Sniffed"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Methods_of_consumption-Injected",
+      "data": {
+        "label": "Injected"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Methods_of_consumption-Smoked",
+      "data": {
+        "label": "Smoked"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Methods_of_consumption-Applied_to_the_skin",
+      "data": {
+        "label": "Applied to the skin"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Street_names",
+      "data": {
+        "label": "Street names"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Street_names-Acid",
+      "data": {
+        "label": "Acid"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Street_names-Trips",
+      "data": {
+        "label": "Trips"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Street_names-Tabs",
+      "data": {
+        "label": "Tabs"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Street_names-Microdots",
+      "data": {
+        "label": "Microdots"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Street_names-Dots",
+      "data": {
+        "label": "Dots"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-What_is_LSD?-Street_names-Lucy",
+      "data": {
+        "label": "Lucy"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD",
+      "data": {
+        "label": "Effects of LSD"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Sensory_distortions",
+      "data": {
+        "label": "Sensory distortions"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Intensified_moods",
+      "data": {
+        "label": "Intensified moods"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Altered_thought_processes",
+      "data": {
+        "label": "Altered thought processes"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects",
+      "data": {
+        "label": "Physical effects"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects-Dilated_pupils",
+      "data": {
+        "label": "Dilated pupils"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects-Confusion",
+      "data": {
+        "label": "Confusion"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects-Increased_heart_rate",
+      "data": {
+        "label": "Increased heart rate"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects-Dizziness",
+      "data": {
+        "label": "Dizziness"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects-Nausea",
+      "data": {
+        "label": "Nausea"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects-Insomnia",
+      "data": {
+        "label": "Insomnia"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects-Muscles_twitching",
+      "data": {
+        "label": "Muscles twitching"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects-Flushes,_sweats_or_chills",
+      "data": {
+        "label": "Flushes, sweats or chills"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Physical_effects-Elevated_blood_pressure",
+      "data": {
+        "label": "Elevated blood pressure"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Trips",
+      "data": {
+        "label": "Trips"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Trips-Hallucinations",
+      "data": {
+        "label": "Hallucinations"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Trips-Heightened_senses",
+      "data": {
+        "label": "Heightened senses"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Trips-Distorted_sense_of_time_and_space",
+      "data": {
+        "label": "Distorted sense of time and space"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Trips-Strange_bodily_sensations",
+      "data": {
+        "label": "Strange bodily sensations"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Trips-Rapid_emotional_changes",
+      "data": {
+        "label": "Rapid emotional changes"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-Trips-Altered_state_of_thinking",
+      "data": {
+        "label": "Altered state of thinking"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-After_effects",
+      "data": {
+        "label": "After effects"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-After_effects-Insomnia",
+      "data": {
+        "label": "Insomnia"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-After_effects-Fatigue",
+      "data": {
+        "label": "Fatigue"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-After_effects-Body_and_muscle_aches",
+      "data": {
+        "label": "Body and muscle aches"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Effects_of_LSD-After_effects-Depression",
+      "data": {
+        "label": "Depression"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications",
+      "data": {
+        "label": "Risks and complications"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Bad_trips",
+      "data": {
+        "label": "Bad trips"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Bad_trips-Extreme_anxiety",
+      "data": {
+        "label": "Extreme anxiety"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Bad_trips-Frightening_hallucinations",
+      "data": {
+        "label": "Frightening hallucinations"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Bad_trips-Panic",
+      "data": {
+        "label": "Panic"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Bad_trips-Loss_of_control",
+      "data": {
+        "label": "Loss of control"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Bad_trips-Paranoia",
+      "data": {
+        "label": "Paranoia"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Long-term_problems",
+      "data": {
+        "label": "Long-term problems"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Long-term_problems-Flashbacks",
+      "data": {
+        "label": "Flashbacks"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Long-term_problems-Hallucinogen_persisting_perception_disorder",
+      "data": {
+        "label": "Hallucinogen persisting perception disorder"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Long-term_problems-Memory_and_concentration_damage",
+      "data": {
+        "label": "Memory and concentration damage"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Long-term_problems-Trigger_or_worsen_mental_health_issues",
+      "data": {
+        "label": "Trigger or worsen mental health issues"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol",
+      "data": {
+        "label": "Mixing with other drugs/alcohol"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-Increased_risk_of_bad_trip/stroke",
+      "data": {
+        "label": "Increased risk of bad trip/stroke"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-Increased_uncoordination",
+      "data": {
+        "label": "Increased uncoordination"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-Increased_nausea_and_vomiting",
+      "data": {
+        "label": "Increased nausea and vomiting"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Dependence_and_tolerance",
+      "data": {
+        "label": "Dependence and tolerance"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Dependence_and_tolerance-No_physical_dependence_usually",
+      "data": {
+        "label": "No physical dependence usually"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Dependence_and_tolerance-Some_users_may_crave_after_stopping",
+      "data": {
+        "label": "Some users may crave after stopping"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "LSD-Dependence_and_tolerance-Tolerance_can_be_developed",
+      "data": {
+        "label": "Tolerance can be developed"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "arrow-LSD-What_is_LSD?-LSD",
+      "source": "LSD",
+      "target": "LSD-What_is_LSD?",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Physical_description-LSD-What_is_LSD?",
+      "source": "LSD-What_is_LSD?",
+      "target": "LSD-What_is_LSD?-Physical_description",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Physical_description-Odourless_white_powder-LSD-What_is_LSD?-Physical_description",
+      "source": "LSD-What_is_LSD?-Physical_description",
+      "target": "LSD-What_is_LSD?-Physical_description-Odourless_white_powder",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Physical_description-Often_diluted-LSD-What_is_LSD?-Physical_description",
+      "source": "LSD-What_is_LSD?-Physical_description",
+      "target": "LSD-What_is_LSD?-Physical_description-Often_diluted",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Methods_of_consumption-LSD-What_is_LSD?",
+      "source": "LSD-What_is_LSD?",
+      "target": "LSD-What_is_LSD?-Methods_of_consumption",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Methods_of_consumption-Swallowed/dissolved_under_tongue-LSD-What_is_LSD?-Methods_of_consumption",
+      "source": "LSD-What_is_LSD?-Methods_of_consumption",
+      "target": "LSD-What_is_LSD?-Methods_of_consumption-Swallowed/dissolved_under_tongue",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Methods_of_consumption-Sniffed-LSD-What_is_LSD?-Methods_of_consumption",
+      "source": "LSD-What_is_LSD?-Methods_of_consumption",
+      "target": "LSD-What_is_LSD?-Methods_of_consumption-Sniffed",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Methods_of_consumption-Injected-LSD-What_is_LSD?-Methods_of_consumption",
+      "source": "LSD-What_is_LSD?-Methods_of_consumption",
+      "target": "LSD-What_is_LSD?-Methods_of_consumption-Injected",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Methods_of_consumption-Smoked-LSD-What_is_LSD?-Methods_of_consumption",
+      "source": "LSD-What_is_LSD?-Methods_of_consumption",
+      "target": "LSD-What_is_LSD?-Methods_of_consumption-Smoked",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Methods_of_consumption-Applied_to_the_skin-LSD-What_is_LSD?-Methods_of_consumption",
+      "source": "LSD-What_is_LSD?-Methods_of_consumption",
+      "target": "LSD-What_is_LSD?-Methods_of_consumption-Applied_to_the_skin",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Street_names-LSD-What_is_LSD?",
+      "source": "LSD-What_is_LSD?",
+      "target": "LSD-What_is_LSD?-Street_names",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Street_names-Acid-LSD-What_is_LSD?-Street_names",
+      "source": "LSD-What_is_LSD?-Street_names",
+      "target": "LSD-What_is_LSD?-Street_names-Acid",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Street_names-Trips-LSD-What_is_LSD?-Street_names",
+      "source": "LSD-What_is_LSD?-Street_names",
+      "target": "LSD-What_is_LSD?-Street_names-Trips",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Street_names-Tabs-LSD-What_is_LSD?-Street_names",
+      "source": "LSD-What_is_LSD?-Street_names",
+      "target": "LSD-What_is_LSD?-Street_names-Tabs",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Street_names-Microdots-LSD-What_is_LSD?-Street_names",
+      "source": "LSD-What_is_LSD?-Street_names",
+      "target": "LSD-What_is_LSD?-Street_names-Microdots",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Street_names-Dots-LSD-What_is_LSD?-Street_names",
+      "source": "LSD-What_is_LSD?-Street_names",
+      "target": "LSD-What_is_LSD?-Street_names-Dots",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-What_is_LSD?-Street_names-Lucy-LSD-What_is_LSD?-Street_names",
+      "source": "LSD-What_is_LSD?-Street_names",
+      "target": "LSD-What_is_LSD?-Street_names-Lucy",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-LSD",
+      "source": "LSD",
+      "target": "LSD-Effects_of_LSD",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Sensory_distortions-LSD-Effects_of_LSD",
+      "source": "LSD-Effects_of_LSD",
+      "target": "LSD-Effects_of_LSD-Sensory_distortions",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Intensified_moods-LSD-Effects_of_LSD",
+      "source": "LSD-Effects_of_LSD",
+      "target": "LSD-Effects_of_LSD-Intensified_moods",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Altered_thought_processes-LSD-Effects_of_LSD",
+      "source": "LSD-Effects_of_LSD",
+      "target": "LSD-Effects_of_LSD-Altered_thought_processes",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-LSD-Effects_of_LSD",
+      "source": "LSD-Effects_of_LSD",
+      "target": "LSD-Effects_of_LSD-Physical_effects",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-Dilated_pupils-LSD-Effects_of_LSD-Physical_effects",
+      "source": "LSD-Effects_of_LSD-Physical_effects",
+      "target": "LSD-Effects_of_LSD-Physical_effects-Dilated_pupils",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-Confusion-LSD-Effects_of_LSD-Physical_effects",
+      "source": "LSD-Effects_of_LSD-Physical_effects",
+      "target": "LSD-Effects_of_LSD-Physical_effects-Confusion",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-Increased_heart_rate-LSD-Effects_of_LSD-Physical_effects",
+      "source": "LSD-Effects_of_LSD-Physical_effects",
+      "target": "LSD-Effects_of_LSD-Physical_effects-Increased_heart_rate",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-Dizziness-LSD-Effects_of_LSD-Physical_effects",
+      "source": "LSD-Effects_of_LSD-Physical_effects",
+      "target": "LSD-Effects_of_LSD-Physical_effects-Dizziness",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-Nausea-LSD-Effects_of_LSD-Physical_effects",
+      "source": "LSD-Effects_of_LSD-Physical_effects",
+      "target": "LSD-Effects_of_LSD-Physical_effects-Nausea",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-Insomnia-LSD-Effects_of_LSD-Physical_effects",
+      "source": "LSD-Effects_of_LSD-Physical_effects",
+      "target": "LSD-Effects_of_LSD-Physical_effects-Insomnia",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-Muscles_twitching-LSD-Effects_of_LSD-Physical_effects",
+      "source": "LSD-Effects_of_LSD-Physical_effects",
+      "target": "LSD-Effects_of_LSD-Physical_effects-Muscles_twitching",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-Flushes,_sweats_or_chills-LSD-Effects_of_LSD-Physical_effects",
+      "source": "LSD-Effects_of_LSD-Physical_effects",
+      "target": "LSD-Effects_of_LSD-Physical_effects-Flushes,_sweats_or_chills",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Physical_effects-Elevated_blood_pressure-LSD-Effects_of_LSD-Physical_effects",
+      "source": "LSD-Effects_of_LSD-Physical_effects",
+      "target": "LSD-Effects_of_LSD-Physical_effects-Elevated_blood_pressure",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Trips-LSD-Effects_of_LSD",
+      "source": "LSD-Effects_of_LSD",
+      "target": "LSD-Effects_of_LSD-Trips",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Trips-Hallucinations-LSD-Effects_of_LSD-Trips",
+      "source": "LSD-Effects_of_LSD-Trips",
+      "target": "LSD-Effects_of_LSD-Trips-Hallucinations",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Trips-Heightened_senses-LSD-Effects_of_LSD-Trips",
+      "source": "LSD-Effects_of_LSD-Trips",
+      "target": "LSD-Effects_of_LSD-Trips-Heightened_senses",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Trips-Distorted_sense_of_time_and_space-LSD-Effects_of_LSD-Trips",
+      "source": "LSD-Effects_of_LSD-Trips",
+      "target": "LSD-Effects_of_LSD-Trips-Distorted_sense_of_time_and_space",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Trips-Strange_bodily_sensations-LSD-Effects_of_LSD-Trips",
+      "source": "LSD-Effects_of_LSD-Trips",
+      "target": "LSD-Effects_of_LSD-Trips-Strange_bodily_sensations",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Trips-Rapid_emotional_changes-LSD-Effects_of_LSD-Trips",
+      "source": "LSD-Effects_of_LSD-Trips",
+      "target": "LSD-Effects_of_LSD-Trips-Rapid_emotional_changes",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-Trips-Altered_state_of_thinking-LSD-Effects_of_LSD-Trips",
+      "source": "LSD-Effects_of_LSD-Trips",
+      "target": "LSD-Effects_of_LSD-Trips-Altered_state_of_thinking",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-After_effects-LSD-Effects_of_LSD",
+      "source": "LSD-Effects_of_LSD",
+      "target": "LSD-Effects_of_LSD-After_effects",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-After_effects-Insomnia-LSD-Effects_of_LSD-After_effects",
+      "source": "LSD-Effects_of_LSD-After_effects",
+      "target": "LSD-Effects_of_LSD-After_effects-Insomnia",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-After_effects-Fatigue-LSD-Effects_of_LSD-After_effects",
+      "source": "LSD-Effects_of_LSD-After_effects",
+      "target": "LSD-Effects_of_LSD-After_effects-Fatigue",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-After_effects-Body_and_muscle_aches-LSD-Effects_of_LSD-After_effects",
+      "source": "LSD-Effects_of_LSD-After_effects",
+      "target": "LSD-Effects_of_LSD-After_effects-Body_and_muscle_aches",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Effects_of_LSD-After_effects-Depression-LSD-Effects_of_LSD-After_effects",
+      "source": "LSD-Effects_of_LSD-After_effects",
+      "target": "LSD-Effects_of_LSD-After_effects-Depression",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-LSD",
+      "source": "LSD",
+      "target": "LSD-Risks_and_complications",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Bad_trips-LSD-Risks_and_complications",
+      "source": "LSD-Risks_and_complications",
+      "target": "LSD-Risks_and_complications-Bad_trips",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Bad_trips-Extreme_anxiety-LSD-Risks_and_complications-Bad_trips",
+      "source": "LSD-Risks_and_complications-Bad_trips",
+      "target": "LSD-Risks_and_complications-Bad_trips-Extreme_anxiety",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Bad_trips-Frightening_hallucinations-LSD-Risks_and_complications-Bad_trips",
+      "source": "LSD-Risks_and_complications-Bad_trips",
+      "target": "LSD-Risks_and_complications-Bad_trips-Frightening_hallucinations",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Bad_trips-Panic-LSD-Risks_and_complications-Bad_trips",
+      "source": "LSD-Risks_and_complications-Bad_trips",
+      "target": "LSD-Risks_and_complications-Bad_trips-Panic",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Bad_trips-Loss_of_control-LSD-Risks_and_complications-Bad_trips",
+      "source": "LSD-Risks_and_complications-Bad_trips",
+      "target": "LSD-Risks_and_complications-Bad_trips-Loss_of_control",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Bad_trips-Paranoia-LSD-Risks_and_complications-Bad_trips",
+      "source": "LSD-Risks_and_complications-Bad_trips",
+      "target": "LSD-Risks_and_complications-Bad_trips-Paranoia",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Long-term_problems-LSD-Risks_and_complications",
+      "source": "LSD-Risks_and_complications",
+      "target": "LSD-Risks_and_complications-Long-term_problems",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Long-term_problems-Flashbacks-LSD-Risks_and_complications-Long-term_problems",
+      "source": "LSD-Risks_and_complications-Long-term_problems",
+      "target": "LSD-Risks_and_complications-Long-term_problems-Flashbacks",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Long-term_problems-Hallucinogen_persisting_perception_disorder-LSD-Risks_and_complications-Long-term_problems",
+      "source": "LSD-Risks_and_complications-Long-term_problems",
+      "target": "LSD-Risks_and_complications-Long-term_problems-Hallucinogen_persisting_perception_disorder",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Long-term_problems-Memory_and_concentration_damage-LSD-Risks_and_complications-Long-term_problems",
+      "source": "LSD-Risks_and_complications-Long-term_problems",
+      "target": "LSD-Risks_and_complications-Long-term_problems-Memory_and_concentration_damage",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Long-term_problems-Trigger_or_worsen_mental_health_issues-LSD-Risks_and_complications-Long-term_problems",
+      "source": "LSD-Risks_and_complications-Long-term_problems",
+      "target": "LSD-Risks_and_complications-Long-term_problems-Trigger_or_worsen_mental_health_issues",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-LSD-Risks_and_complications",
+      "source": "LSD-Risks_and_complications",
+      "target": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-Increased_risk_of_bad_trip/stroke-LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol",
+      "source": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol",
+      "target": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-Increased_risk_of_bad_trip/stroke",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-Increased_uncoordination-LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol",
+      "source": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol",
+      "target": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-Increased_uncoordination",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-Increased_nausea_and_vomiting-LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol",
+      "source": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol",
+      "target": "LSD-Risks_and_complications-Mixing_with_other_drugs/alcohol-Increased_nausea_and_vomiting",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Dependence_and_tolerance-LSD",
+      "source": "LSD",
+      "target": "LSD-Dependence_and_tolerance",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Dependence_and_tolerance-No_physical_dependence_usually-LSD-Dependence_and_tolerance",
+      "source": "LSD-Dependence_and_tolerance",
+      "target": "LSD-Dependence_and_tolerance-No_physical_dependence_usually",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Dependence_and_tolerance-Some_users_may_crave_after_stopping-LSD-Dependence_and_tolerance",
+      "source": "LSD-Dependence_and_tolerance",
+      "target": "LSD-Dependence_and_tolerance-Some_users_may_crave_after_stopping",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-LSD-Dependence_and_tolerance-Tolerance_can_be_developed-LSD-Dependence_and_tolerance",
+      "source": "LSD-Dependence_and_tolerance",
+      "target": "LSD-Dependence_and_tolerance-Tolerance_can_be_developed",
+      "type": "smoothstep",
+      "animated": false
+    }
+  ]
+}
