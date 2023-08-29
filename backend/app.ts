@@ -4,7 +4,7 @@ import {
   getMindMapJsonFromOpenApiInitial,
   ytCaptionsScriptResultToText,
   work,
-} from "./functions";
+} from "./src/functions";
 import fs from "fs";
 
 (async () => {

@@ -1,6 +1,8 @@
 import fs from "fs";
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 require("dotenv").config();
+import { spawn } from "child_process";
+import path from "path";
 
 if (!process.env.OPENAI_API_KEY) {
   throw new Error("OPENAI_API_KEY env variable is not set");
@@ -14,11 +16,17 @@ type ResStructure = {
   text: string;
 }[];
 
-export function ytCaptionsScriptResultToText(src: string) {
-  const content = JSON.parse(fs.readFileSync(`./${src}.json`, "utf-8")) as
+export function readCaptionsFile(videoId: string) {
+  const content = JSON.parse(fs.readFileSync(`./${videoId}.json`, "utf-8")) as
     | ResStructure[]
     | ResStructure;
 
+  return content;
+}
+
+export function ytCaptionsScriptResultToText(
+  content: ResStructure[] | ResStructure
+) {
   const arr = Array.isArray(content[0])
     ? content[0]
     : (content as ResStructure);
@@ -27,13 +35,9 @@ export function ytCaptionsScriptResultToText(src: string) {
     return acc + " " + item.text;
   }, "");
 
-  if (!fs.existsSync(src)) {
-    // Create the directory if it doesn't
-    fs.mkdirSync(src, { recursive: true }); // `recursive: true` ensures parent directories are created if they don't exist
-  }
-
-  fs.writeFileSync(`${src}/1.txt`, str);
+  return str;
 }
+
 const configuration = new Configuration({
   // organization: "YOUR_ORG_ID",
   apiKey: OpenAIApiKey,
@@ -80,7 +84,7 @@ async function getResponseFromGPT4({
       ? response.data.choices[0].message?.function_call?.arguments
       : response.data.choices[0].message?.function_call?.arguments;
 
-  return JSON.parse(JSON.parse(targetJson || "").jsonString);
+  return JSON.parse(JSON.parse(targetJson || "").jsonString) as ResultItem;
 }
 
 const taskDef1 = `Provide JSON structure that will be used for creation of a mind map`;
@@ -146,8 +150,8 @@ export function getTranscriptParts(dir: string) {
   });
 }
 
-export async function work() {
-  const parts = getTranscriptParts("posture");
+export async function createStructure(videoId: string) {
+  const parts = getTranscriptParts(videoId);
 
   if (parts.length === 0) {
     return;
@@ -176,34 +180,92 @@ export async function work() {
 
 type ResultItem = { nodeName: string; children: ResultItem[] };
 
-// function transformItem(item: ResultItem, parent: ResultItem | null): Node[] {
-//   return [
-//     {
-//       id:
-//         item.nodeName.replace(/[ ]/g, "-") +
-//         "-" +
-//         parent?.nodeName.replace(/[ ]/g, "-"),
-//       data: { label: item.nodeName },
-//       position: { x: 0, y: 0 },
-//     },
-//     ...item.children.map((it) => transformItem(it, item)),
-//   ].flat();
-// }
+function transformItem(
+  item: ResultItem,
+  parentNodeId: string | null
+): { nodes: any[]; edges: any[] } {
+  const id =
+    (parentNodeId ? parentNodeId + "-" : "") +
+    item.nodeName.replace(/[ ]/g, "_");
 
-export function openAiResultToNiceJSON() {
-  // const res = JSON.parse(fs.readFileSync("./res.json", "utf-8"));
-  // const json = JSON.parse(
-  //   JSON.parse(res.choices[0].message?.function_call?.arguments || "")
-  //     .jsonString
-  // ) as ResultItem;
-  // const tranformed = json;
-  // try {
-  //   fs.writeFileSync(
-  //     "product.json",
-  //     JSON.stringify(transformItem(json), null, 2)
-  //   );
-  //   console.log("ok");
-  // } catch (e: any) {
-  //   console.log(e.message);
-  // }
+  const { nodes, edges } = item.children
+    ? item.children.reduce(
+        (acc, it) => {
+          const res = transformItem(it, id);
+          return {
+            nodes: [...acc.nodes, ...res.nodes],
+            edges: [...acc.edges, ...res.edges],
+          };
+        },
+        { nodes: [] as any[], edges: [] as any[] }
+      )
+    : { nodes: [], edges: [] };
+
+  return {
+    nodes: [
+      {
+        id: id,
+        data: { label: item.nodeName },
+        position: { x: 0, y: 0 },
+      },
+      ...nodes,
+    ],
+    edges: [
+      ...(parentNodeId
+        ? [
+            {
+              id: "arrow-" + id + "-" + parentNodeId,
+              source: parentNodeId,
+              target: id,
+              type: "smoothstep",
+              animated: false,
+            },
+          ]
+        : []),
+      ...edges,
+    ],
+  };
+}
+
+export function openAiStructureToMindmapData(videoId: string) {
+  const res = JSON.parse(
+    fs.readFileSync(path.join(videoId, "structure.json"), "utf-8")
+  );
+
+  const tranformed = transformItem(res, null);
+
+  return tranformed;
+}
+
+export function getNodesAndEdges(videoId: string) {
+  const { nodes, edges } = JSON.parse(
+    fs.readFileSync(path.join(videoId, "mindmap.json"), "utf-8")
+  ) as { nodes: any[]; edges: any[] };
+
+  return { nodes, edges };
+}
+
+export async function runPy(videoId: string) {
+  return new Promise<void>((resolve, reject) => {
+    const pythonProcess = spawn("python3", [
+      "get-transcript.py",
+      videoId,
+      `${videoId}.json`,
+    ]);
+
+    pythonProcess.stdout.on("data", (data) => {
+      console.log(`Python Output: ${data}`);
+
+      resolve(JSON.parse(data));
+    });
+
+    pythonProcess.stderr.on("data", (data) => {
+      console.error(`Python Error: ${data}`);
+    });
+
+    pythonProcess.on("close", (code) => {
+      resolve();
+      console.log(`Python script exited with code ${code}`);
+    });
+  });
 }

@@ -13,7 +13,7 @@ import ReactFlow, {
 } from "reactflow";
 import dagre from "dagre";
 
-import { initialNodes, initialEdges } from "./nodes-edges";
+// import { initialNodes, initialEdges } from "./nodes-edges";
 
 import "reactflow/dist/style.css";
 
@@ -70,12 +70,11 @@ const LayoutFlow = ({
     () => getLayoutedElements(initNodes, initEdges),
     [initNodes]
   );
-
   const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
 
   const onConnect = useCallback(
-    (params) =>
+    (params: any) =>
       setEdges((eds) =>
         addEdge(
           { ...params, type: ConnectionLineType.SmoothStep, animated: true },
@@ -85,7 +84,7 @@ const LayoutFlow = ({
     []
   );
   const onLayout = useCallback(
-    (direction) => {
+    (direction: any) => {
       const { nodes: layoutedNodes, edges: layoutedEdges } =
         getLayoutedElements(nodes, edges, direction);
 

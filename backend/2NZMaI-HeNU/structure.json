@@ -1,0 +1,64 @@
+{
+  "nodeName": "Anterior Pelvic Tilt",
+  "children": [
+    {
+      "nodeName": "Definition",
+      "children": [
+        {
+          "nodeName": "Postural pattern characterized by a forward tipped pelvis"
+        },
+        {
+          "nodeName": "Causes hips to get pushed out back and abdomen to stick out forward"
+        },
+        { "nodeName": "Creates a slight curve in the lower back" }
+      ]
+    },
+    {
+      "nodeName": "Causes",
+      "children": [
+        { "nodeName": "Extended periods of sitting" },
+        { "nodeName": "Underactive muscles (abdominals and glutes)" },
+        { "nodeName": "Overactive muscles (hip flexors and erector spinae)" }
+      ]
+    },
+    {
+      "nodeName": "Effects",
+      "children": [
+        { "nodeName": "Stress on lower back" },
+        { "nodeName": "Inhibits force production" },
+        { "nodeName": "Lower back tightness and pain" },
+        {
+          "nodeName": "Prevents from lifting heavier weights or properly activating the glutes"
+        }
+      ]
+    },
+    {
+      "nodeName": "Solution",
+      "children": [
+        {
+          "nodeName": "Step 1: Learn to posteriorly tilt your pelvis",
+          "children": [
+            { "nodeName": "Practice pelvic tilts on the ground and standing" }
+          ]
+        },
+        {
+          "nodeName": "Step 2: Strengthen underactive muscles",
+          "children": [
+            { "nodeName": "Hip thrust for glutes" },
+            { "nodeName": "RKC planks for abdominals" }
+          ]
+        },
+        {
+          "nodeName": "Step 3: Stretch overactive muscles",
+          "children": [
+            { "nodeName": "Lunge stretch for psoas muscle" },
+            { "nodeName": "Stretch for rectus femoris" }
+          ]
+        },
+        {
+          "nodeName": "Step 4: Be aware of your posture during day-to-day life and training"
+        }
+      ]
+    }
+  ]
+}
