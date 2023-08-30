@@ -16,6 +16,8 @@ type ResStructure = {
   text: string;
 }[];
 
+export type PythonScriptResponse = ResStructure[] | ResStructure;
+
 export function readCaptionsFile(videoId: string) {
   const content = JSON.parse(fs.readFileSync(`./${videoId}.json`, "utf-8")) as
     | ResStructure[]
@@ -95,45 +97,37 @@ const taskDefNext2 = `Analyze a given long-form text and use it to complete and 
 export async function getMindMapJsonFromOpenApiInitial(transcript: string) {
   // const transcript = fs.readFileSync(`./${src}`, "utf-8");
 
-  try {
-    return await getResponseFromGPT4({
-      temperature: 0,
-      messages: [{ role: "user", content: transcript }],
-      fcDescription: taskDef1,
-      jsonPropDescription:
-        "The JSON structure. Here's the desired structure expressed as a TypeScript type: type Node = { nodeName: string; children: Node[] }. Use multiple levels of nesting to incorporate all relevant information.",
-    });
-  } catch (e: any) {
-    console.log(e.response.data);
-  }
+  return await getResponseFromGPT4({
+    temperature: 0,
+    messages: [{ role: "user", content: transcript }],
+    fcDescription: taskDef1,
+    jsonPropDescription:
+      "The JSON structure. Here's the desired structure expressed as a TypeScript type: type Node = { nodeName: string; children: Node[] }. Use multiple levels of nesting to incorporate all relevant information.",
+  });
 }
 
 export async function getMindMapJsonFromOpenApiNext(
   transcript: string,
   currentJson: any
 ) {
-  try {
-    const res = await getResponseFromGPT4({
-      temperature: 0,
-      messages: [
-        { role: "user", content: JSON.stringify(currentJson) },
-        { role: "user", content: transcript },
-      ],
-      fcDescription: taskDefNext1,
-      jsonPropDescription:
-        "The JSON structure. The structure expressed as a TypeScript type: type Node = { nodeName: string; children: Node[] }. Use multiple levels of nesting to incorporate all relevant information.",
-    });
+  const res = await getResponseFromGPT4({
+    temperature: 0,
+    messages: [
+      { role: "user", content: JSON.stringify(currentJson) },
+      { role: "user", content: transcript },
+    ],
+    fcDescription: taskDefNext1,
+    jsonPropDescription:
+      "The JSON structure. The structure expressed as a TypeScript type: type Node = { nodeName: string; children: Node[] }. Use multiple levels of nesting to incorporate all relevant information.",
+  });
 
-    console.log(
-      JSON.stringify(currentJson).length,
-      transcript.length,
-      JSON.stringify(res).length
-    );
+  console.log(
+    JSON.stringify(currentJson).length,
+    transcript.length,
+    JSON.stringify(res).length
+  );
 
-    return res;
-  } catch (e: any) {
-    console.log(e.response.data);
-  }
+  return res;
 }
 
 export function getTranscriptParts(dir: string) {
@@ -150,11 +144,11 @@ export function getTranscriptParts(dir: string) {
   });
 }
 
-export async function createStructure(videoId: string) {
-  const parts = getTranscriptParts(videoId);
+export async function createStructure(parts: string[]) {
+  // const parts = getTranscriptParts(videoId);
 
   if (parts.length === 0) {
-    return;
+    throw new Error("No parts");
   } else if (parts.length === 1) {
     return await getMindMapJsonFromOpenApiInitial(parts[0]);
   } else {
@@ -180,7 +174,7 @@ export async function createStructure(videoId: string) {
 
 type ResultItem = { nodeName: string; children: ResultItem[] };
 
-function transformItem(
+export function transformItem(
   item: ResultItem,
   parentNodeId: string | null
 ): { nodes: any[]; edges: any[] } {
@@ -246,7 +240,7 @@ export function getNodesAndEdges(videoId: string) {
 }
 
 export async function runPy(videoId: string) {
-  return new Promise<void>((resolve, reject) => {
+  return new Promise<PythonScriptResponse>((resolve, reject) => {
     const pythonProcess = spawn("python3", [
       "get-transcript.py",
       videoId,
@@ -254,7 +248,9 @@ export async function runPy(videoId: string) {
     ]);
 
     pythonProcess.stdout.on("data", (data) => {
-      console.log(`Python Output: ${data}`);
+      // console.log(`Python Output: ${data}`);
+
+      console.log((data.toString() as string).slice(0, 100));
 
       resolve(JSON.parse(data));
     });
@@ -264,7 +260,7 @@ export async function runPy(videoId: string) {
     });
 
     pythonProcess.on("close", (code) => {
-      resolve();
+      // resolve();
       console.log(`Python script exited with code ${code}`);
     });
   });

@@ -1,218 +1,424 @@
 {
   "nodes": [
     {
-      "id": 25,
-      "label": "Anterior Pelvic Tilt",
-      "title": "Anterior Pelvic Tilt"
+      "id": "Anterior_Pelvic_Tilt",
+      "data": {
+        "label": "Anterior Pelvic Tilt"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 26,
-      "label": "Definition",
-      "title": "Definition"
+      "id": "Anterior_Pelvic_Tilt-Definition",
+      "data": {
+        "label": "Definition"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 27,
-      "label": "Postural pattern characterized by a forward tipped pelvis",
-      "title": "Postural pattern characterized by a forward tipped pelvis"
+      "id": "Anterior_Pelvic_Tilt-Definition-Postural_pattern_characterized_by_a_forward_tipped_pelvis",
+      "data": {
+        "label": "Postural pattern characterized by a forward tipped pelvis"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 28,
-      "label": "Causes hips to get pushed out back and abdomen to stick out forward",
-      "title": "Causes hips to get pushed out back and abdomen to stick out forward"
+      "id": "Anterior_Pelvic_Tilt-Definition-Causes_hips_to_get_pushed_out_back_and_abdomen_to_stick_out_forward",
+      "data": {
+        "label": "Causes hips to get pushed out back and abdomen to stick out forward"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 29,
-      "label": "Creates a slight curve in the lower back",
-      "title": "Creates a slight curve in the lower back"
+      "id": "Anterior_Pelvic_Tilt-Definition-Creates_a_slight_curve_in_the_lower_back",
+      "data": {
+        "label": "Creates a slight curve in the lower back"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 30,
-      "label": "Causes",
-      "title": "Causes"
+      "id": "Anterior_Pelvic_Tilt-Causes",
+      "data": {
+        "label": "Causes"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 31,
-      "label": "Extended periods of sitting",
-      "title": "Extended periods of sitting"
+      "id": "Anterior_Pelvic_Tilt-Causes-Extended_periods_of_sitting",
+      "data": {
+        "label": "Extended periods of sitting"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 32,
-      "label": "Underactive muscles (abdominals and glutes)",
-      "title": "Underactive muscles (abdominals and glutes)"
+      "id": "Anterior_Pelvic_Tilt-Causes-Underactive_muscles_(abdominals_and_glutes)",
+      "data": {
+        "label": "Underactive muscles (abdominals and glutes)"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 33,
-      "label": "Overactive muscles (hip flexors and erector spinae)",
-      "title": "Overactive muscles (hip flexors and erector spinae)"
+      "id": "Anterior_Pelvic_Tilt-Causes-Overactive_muscles_(hip_flexors_and_erector_spinae)",
+      "data": {
+        "label": "Overactive muscles (hip flexors and erector spinae)"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 34,
-      "label": "Effects",
-      "title": "Effects"
+      "id": "Anterior_Pelvic_Tilt-Effects",
+      "data": {
+        "label": "Effects"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 35,
-      "label": "Stress on lower back",
-      "title": "Stress on lower back"
+      "id": "Anterior_Pelvic_Tilt-Effects-Stress_on_lower_back",
+      "data": {
+        "label": "Stress on lower back"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 36,
-      "label": "Inhibits force production",
-      "title": "Inhibits force production"
+      "id": "Anterior_Pelvic_Tilt-Effects-Inhibits_force_production",
+      "data": {
+        "label": "Inhibits force production"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 37,
-      "label": "Lower back tightness and pain",
-      "title": "Lower back tightness and pain"
+      "id": "Anterior_Pelvic_Tilt-Effects-Lower_back_tightness_and_pain",
+      "data": {
+        "label": "Lower back tightness and pain"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 38,
-      "label": "Prevents from lifting heavier weights or properly activating the glutes",
-      "title": "Prevents from lifting heavier weights or properly activating the glutes"
+      "id": "Anterior_Pelvic_Tilt-Effects-Prevents_from_lifting_heavier_weights_or_properly_activating_the_glutes",
+      "data": {
+        "label": "Prevents from lifting heavier weights or properly activating the glutes"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 39,
-      "label": "Solution",
-      "title": "Solution"
+      "id": "Anterior_Pelvic_Tilt-Solution",
+      "data": {
+        "label": "Solution"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 40,
-      "label": "Step 1: Learn to posteriorly tilt your pelvis",
-      "title": "Step 1: Learn to posteriorly tilt your pelvis"
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis",
+      "data": {
+        "label": "Step 1: Learn to posteriorly tilt your pelvis"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 41,
-      "label": "Practice pelvic tilts on the ground and standing",
-      "title": "Practice pelvic tilts on the ground and standing"
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis-Pelvic_tilts_on_the_ground",
+      "data": {
+        "label": "Pelvic tilts on the ground"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 42,
-      "label": "Step 2: Strengthen underactive muscles",
-      "title": "Step 2: Strengthen underactive muscles"
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis-Standing_pelvic_tilts",
+      "data": {
+        "label": "Standing pelvic tilts"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 43,
-      "label": "Hip thrust for glutes",
-      "title": "Hip thrust for glutes"
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles",
+      "data": {
+        "label": "Step 2: Strengthen underactive muscles"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 44,
-      "label": "RKC planks for abdominals",
-      "title": "RKC planks for abdominals"
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles-Hip_thrusts_for_glutes",
+      "data": {
+        "label": "Hip thrusts for glutes"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 45,
-      "label": "Step 3: Stretch overactive muscles",
-      "title": "Step 3: Stretch overactive muscles"
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles-RKC_planks_for_abdominals",
+      "data": {
+        "label": "RKC planks for abdominals"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 46,
-      "label": "Lunge stretch for psoas muscle",
-      "title": "Lunge stretch for psoas muscle"
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles",
+      "data": {
+        "label": "Step 3: Stretch overactive muscles"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 47,
-      "label": "Stretch for rectus femoris",
-      "title": "Stretch for rectus femoris"
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles-Lunge_stretch_for_psoas_muscle",
+      "data": {
+        "label": "Lunge stretch for psoas muscle"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
-      "id": 48,
-      "label": "Step 4: Be aware of your posture during day-to-day life and training",
-      "title": "Step 4: Be aware of your posture during day-to-day life and training"
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles-Stretch_for_rectus_femoris",
+      "data": {
+        "label": "Stretch for rectus femoris"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "Anterior_Pelvic_Tilt-Solution-Step_4:_Maintain_a_neutral_pelvis_in_daily_life",
+      "data": {
+        "label": "Step 4: Maintain a neutral pelvis in daily life"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     }
   ],
-  "links": [
+  "edges": [
     {
-      "source": 25,
-      "target": 26
+      "id": "arrow-Anterior_Pelvic_Tilt-Definition-Anterior_Pelvic_Tilt",
+      "source": "Anterior_Pelvic_Tilt",
+      "target": "Anterior_Pelvic_Tilt-Definition",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 26,
-      "target": 27
+      "id": "arrow-Anterior_Pelvic_Tilt-Definition-Postural_pattern_characterized_by_a_forward_tipped_pelvis-Anterior_Pelvic_Tilt-Definition",
+      "source": "Anterior_Pelvic_Tilt-Definition",
+      "target": "Anterior_Pelvic_Tilt-Definition-Postural_pattern_characterized_by_a_forward_tipped_pelvis",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 26,
-      "target": 28
+      "id": "arrow-Anterior_Pelvic_Tilt-Definition-Causes_hips_to_get_pushed_out_back_and_abdomen_to_stick_out_forward-Anterior_Pelvic_Tilt-Definition",
+      "source": "Anterior_Pelvic_Tilt-Definition",
+      "target": "Anterior_Pelvic_Tilt-Definition-Causes_hips_to_get_pushed_out_back_and_abdomen_to_stick_out_forward",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 26,
-      "target": 29
+      "id": "arrow-Anterior_Pelvic_Tilt-Definition-Creates_a_slight_curve_in_the_lower_back-Anterior_Pelvic_Tilt-Definition",
+      "source": "Anterior_Pelvic_Tilt-Definition",
+      "target": "Anterior_Pelvic_Tilt-Definition-Creates_a_slight_curve_in_the_lower_back",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 25,
-      "target": 30
+      "id": "arrow-Anterior_Pelvic_Tilt-Causes-Anterior_Pelvic_Tilt",
+      "source": "Anterior_Pelvic_Tilt",
+      "target": "Anterior_Pelvic_Tilt-Causes",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 30,
-      "target": 31
+      "id": "arrow-Anterior_Pelvic_Tilt-Causes-Extended_periods_of_sitting-Anterior_Pelvic_Tilt-Causes",
+      "source": "Anterior_Pelvic_Tilt-Causes",
+      "target": "Anterior_Pelvic_Tilt-Causes-Extended_periods_of_sitting",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 30,
-      "target": 32
+      "id": "arrow-Anterior_Pelvic_Tilt-Causes-Underactive_muscles_(abdominals_and_glutes)-Anterior_Pelvic_Tilt-Causes",
+      "source": "Anterior_Pelvic_Tilt-Causes",
+      "target": "Anterior_Pelvic_Tilt-Causes-Underactive_muscles_(abdominals_and_glutes)",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 30,
-      "target": 33
+      "id": "arrow-Anterior_Pelvic_Tilt-Causes-Overactive_muscles_(hip_flexors_and_erector_spinae)-Anterior_Pelvic_Tilt-Causes",
+      "source": "Anterior_Pelvic_Tilt-Causes",
+      "target": "Anterior_Pelvic_Tilt-Causes-Overactive_muscles_(hip_flexors_and_erector_spinae)",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 25,
-      "target": 34
+      "id": "arrow-Anterior_Pelvic_Tilt-Effects-Anterior_Pelvic_Tilt",
+      "source": "Anterior_Pelvic_Tilt",
+      "target": "Anterior_Pelvic_Tilt-Effects",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 34,
-      "target": 35
+      "id": "arrow-Anterior_Pelvic_Tilt-Effects-Stress_on_lower_back-Anterior_Pelvic_Tilt-Effects",
+      "source": "Anterior_Pelvic_Tilt-Effects",
+      "target": "Anterior_Pelvic_Tilt-Effects-Stress_on_lower_back",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 34,
-      "target": 36
+      "id": "arrow-Anterior_Pelvic_Tilt-Effects-Inhibits_force_production-Anterior_Pelvic_Tilt-Effects",
+      "source": "Anterior_Pelvic_Tilt-Effects",
+      "target": "Anterior_Pelvic_Tilt-Effects-Inhibits_force_production",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 34,
-      "target": 37
+      "id": "arrow-Anterior_Pelvic_Tilt-Effects-Lower_back_tightness_and_pain-Anterior_Pelvic_Tilt-Effects",
+      "source": "Anterior_Pelvic_Tilt-Effects",
+      "target": "Anterior_Pelvic_Tilt-Effects-Lower_back_tightness_and_pain",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 34,
-      "target": 38
+      "id": "arrow-Anterior_Pelvic_Tilt-Effects-Prevents_from_lifting_heavier_weights_or_properly_activating_the_glutes-Anterior_Pelvic_Tilt-Effects",
+      "source": "Anterior_Pelvic_Tilt-Effects",
+      "target": "Anterior_Pelvic_Tilt-Effects-Prevents_from_lifting_heavier_weights_or_properly_activating_the_glutes",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 25,
-      "target": 39
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Anterior_Pelvic_Tilt",
+      "source": "Anterior_Pelvic_Tilt",
+      "target": "Anterior_Pelvic_Tilt-Solution",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 39,
-      "target": 40
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis-Anterior_Pelvic_Tilt-Solution",
+      "source": "Anterior_Pelvic_Tilt-Solution",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 40,
-      "target": 41
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis-Pelvic_tilts_on_the_ground-Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis",
+      "source": "Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis-Pelvic_tilts_on_the_ground",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 39,
-      "target": 42
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis-Standing_pelvic_tilts-Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis",
+      "source": "Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_1:_Learn_to_posteriorly_tilt_your_pelvis-Standing_pelvic_tilts",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 42,
-      "target": 43
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles-Anterior_Pelvic_Tilt-Solution",
+      "source": "Anterior_Pelvic_Tilt-Solution",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 42,
-      "target": 44
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles-Hip_thrusts_for_glutes-Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles",
+      "source": "Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles-Hip_thrusts_for_glutes",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 39,
-      "target": 45
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles-RKC_planks_for_abdominals-Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles",
+      "source": "Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_2:_Strengthen_underactive_muscles-RKC_planks_for_abdominals",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 45,
-      "target": 46
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles-Anterior_Pelvic_Tilt-Solution",
+      "source": "Anterior_Pelvic_Tilt-Solution",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 45,
-      "target": 47
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles-Lunge_stretch_for_psoas_muscle-Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles",
+      "source": "Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles-Lunge_stretch_for_psoas_muscle",
+      "type": "smoothstep",
+      "animated": false
     },
     {
-      "source": 39,
-      "target": 48
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles-Stretch_for_rectus_femoris-Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles",
+      "source": "Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_3:_Stretch_overactive_muscles-Stretch_for_rectus_femoris",
+      "type": "smoothstep",
+      "animated": false
+    },
+    {
+      "id": "arrow-Anterior_Pelvic_Tilt-Solution-Step_4:_Maintain_a_neutral_pelvis_in_daily_life-Anterior_Pelvic_Tilt-Solution",
+      "source": "Anterior_Pelvic_Tilt-Solution",
+      "target": "Anterior_Pelvic_Tilt-Solution-Step_4:_Maintain_a_neutral_pelvis_in_daily_life",
+      "type": "smoothstep",
+      "animated": false
     }
   ]
 }

@@ -5,6 +5,8 @@ import {
   createStructure,
   ytCaptionsScriptResultToText,
   openAiStructureToMindmapData,
+  getTranscriptParts,
+  transformItem,
 } from "./functions";
 import fs from "fs";
 import path from "path";
@@ -49,7 +51,8 @@ app.post("/transcript-to-text", (req, res) => {
 app.post("/create-structure", async (req, res) => {
   const videoId = req.body.videoId;
 
-  const structure = await createStructure(videoId);
+  const parts = getTranscriptParts(videoId);
+  const structure = await createStructure(parts);
 
   fs.writeFileSync(
     path.join(videoId, "structure.json"),
@@ -103,6 +106,62 @@ app.get("/mindmap-data/:videoId", async (req, res) => {
   );
 
   res.json(structure);
+});
+
+app.post("/make-mindmap/:videoId", async (req, res) => {
+  const videoId = req.params.videoId;
+
+  if (fs.existsSync(path.join(videoId, "mindmap.json"))) {
+    const result = JSON.parse(
+      fs.readFileSync(path.join(videoId, "mindmap.json"), "utf-8")
+    );
+
+    console.log("--- sending cached");
+
+    return res.json(result);
+  }
+
+  console.log(`--- mindmap creation for ${videoId} starting`);
+
+  const transcript = await runPy(videoId);
+
+  // Check if the directory exists
+  if (!fs.existsSync(videoId)) {
+    // Create the directory if it doesn't
+    fs.mkdirSync(videoId, { recursive: true }); // `recursive: true` ensures parent directories are created if they don't exist
+  }
+
+  fs.writeFileSync(path.join(videoId, "1.txt"), transcript.toString());
+
+  console.log(`--- transcript obtained`, transcript.toString().slice(0, 40));
+
+  const text = ytCaptionsScriptResultToText(readCaptionsFile(videoId));
+
+  fs.writeFileSync(path.join(videoId, "text.txt"), text);
+
+  console.log(`--- text obtained`, text.slice(0, 40));
+
+  const structure = await createStructure([text]);
+
+  fs.writeFileSync(
+    path.join(videoId, "structure.json"),
+    JSON.stringify(structure)
+  );
+
+  console.log(`--- structure obtained`);
+
+  const mindmapData = transformItem(structure, null);
+
+  console.log(`--- mindmap data obtained`);
+
+  fs.writeFileSync(
+    path.join(videoId, "mindmap.json"),
+    JSON.stringify(mindmapData, null, 2)
+  );
+
+  console.log("--- sending");
+
+  return res.json(mindmapData);
 });
 
 app.listen(port, () => {
