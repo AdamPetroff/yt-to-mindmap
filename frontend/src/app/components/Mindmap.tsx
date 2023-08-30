@@ -9,10 +9,11 @@ export default function Mindmap() {
 
   const { data } = useQuery(["getFlow", vidId], async () => {
     console.log(vidId);
-    const res = await fetch(`/api/mindmap-data/${vidId}`);
+    const res = await fetch(`http://backend:3001/mindmap-data/${vidId}`);
     return (await res.json()) as { nodes: Node[]; edges: Edge[] };
   });
 
+  console.log(data);
   if (!data) {
     return <div>Loading...</div>;
   }

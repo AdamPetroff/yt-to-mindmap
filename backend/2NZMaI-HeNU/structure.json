@@ -1,1 +1,73 @@
-{"nodeName":"Anterior Pelvic Tilt","children":[{"nodeName":"Definition","children":[{"nodeName":"Postural pattern characterized by a forward tipped pelvis"},{"nodeName":"Causes hips to get pushed out back and abdomen to stick out forward"},{"nodeName":"Creates a slight curve in the lower back"}]},{"nodeName":"Causes","children":[{"nodeName":"Extended periods of sitting"},{"nodeName":"Underactive muscles (abdominals and glutes)"},{"nodeName":"Overactive muscles (hip flexors and erector spinae)"}]},{"nodeName":"Effects","children":[{"nodeName":"Stress on lower back"},{"nodeName":"Inhibits force production"},{"nodeName":"Lower back tightness and pain"},{"nodeName":"Prevents from lifting heavier weights or properly activating the glutes"}]},{"nodeName":"Solution","children":[{"nodeName":"Step 1: Learn to posteriorly tilt your pelvis","children":[{"nodeName":"Pelvic tilts on the ground"},{"nodeName":"Standing pelvic tilts"}]},{"nodeName":"Step 2: Strengthen underactive muscles","children":[{"nodeName":"Hip thrusts for glutes"},{"nodeName":"RKC planks for abdominals"}]},{"nodeName":"Step 3: Stretch overactive muscles","children":[{"nodeName":"Lunge stretch for psoas muscle"},{"nodeName":"Stretch for rectus femoris"}]},{"nodeName":"Step 4: Maintain a neutral pelvis in daily life"}]}]}
+{
+  "title": "Introduction",
+  "description": "Introduction to the video, mentioning the focus on anterior pelvic tilt and corrective routine.",
+  "t": 0.06,
+  "children": [
+    {
+      "title": "Anterior Pelvic Tilt",
+      "description": "Explanation of what is anterior pelvic tilt, its causes and the problems that arise from it.",
+      "t": 7.919
+    },
+    {
+      "title": "Four-Step Solution",
+      "description": "Discussion of the four-step solution to correct anterior pelvic tilt.",
+      "t": 16.5,
+      "children": [
+        {
+          "title": "Underactive and Overactive Muscles",
+          "description": "Explanation of the roles of underactive and overactive muscles in anterior pelvic tilt.",
+          "t": 104.189
+        },
+        {
+          "title": "Step 1: Learning to Posteriorly Tilt the Pelvis",
+          "description": "Guidance on learning to tilt the pelvis posteriorly.",
+          "t": 137.13
+        },
+        {
+          "title": "Step 2: Strengthening Exercises",
+          "description": "Introduction to strengthening exercises for glutes and abdominals.",
+          "t": 197.28,
+          "children": [
+            {
+              "title": "Hip Thrust",
+              "description": "Instruction on performing the hip thrust exercise.",
+              "t": 207.54
+            },
+            {
+              "title": "RKC Planks",
+              "description": "Instruction on performing RKC planks for abdominal strengthening.",
+              "t": 273.69
+            }
+          ]
+        },
+        {
+          "title": "Step 3: Stretching Overactive Hip Flexors",
+          "description": "Introduction to stretching exercises for overactive hip flexors.",
+          "t": 315.76,
+          "children": [
+            {
+              "title": "Lunge Stretch",
+              "description": "Instruction on performing the lunge stretch exercise.",
+              "t": 324.47
+            },
+            {
+              "title": "Rectus Femoris Stretch",
+              "description": "Instruction on performing the rectus femoris stretch exercise.",
+              "t": 366.89
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Corrective Routine",
+      "description": "Summary of the corrective routine and availability of a free pdf routine.",
+      "t": 404.6
+    },
+    {
+      "title": "Conclusion",
+      "description": "Closing remarks and reminders about maintaining posture in daily life and training.",
+      "t": 441.5
+    }
+  ]
+}
