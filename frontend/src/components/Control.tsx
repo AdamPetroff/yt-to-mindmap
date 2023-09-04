@@ -5,7 +5,7 @@ import VideoInput from "./VideoInput";
 import Wrapper from "./Wrapper";
 import Flow from "./Flow";
 import NewMindmap from "./NewMindmap";
-import { MindmapData, MindmapNode } from "../../../../types";
+import { MindmapData, MindmapNode } from "../../../types";
 
 export default function Control() {
   const [videoId, setVideoId] = useState<string>();

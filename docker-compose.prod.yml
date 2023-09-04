@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/usr/src/app
+    environment:
+      - NODE_ENV=development
+    networks:
+      - my_network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: prod.Dockerfile
+      args:
+        ENV_VARIABLE: ${ENV_VARIABLE}
+        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - my_network
+
+  # Add more containers below (nginx, postgres, etc.)
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  my_network:
+    external: true

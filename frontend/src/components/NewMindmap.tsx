@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MindmapData, MindmapItem } from "../../../../types";
+import { MindmapData, MindmapItem } from "../../../types";
 import YTBox from "./YTBox";
 
 function MindmapCardView({
