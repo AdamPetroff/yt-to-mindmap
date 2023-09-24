@@ -65,3 +65,15 @@ docker kill $(docker ps -aq) && docker rm $(docker ps -aq)
 # Free space
 docker system prune -af --volumes
 ```
+
+## TODO
+
+- Proper backend endpoints
+- Connect frontend to backend
+- design
+- animation transitions
+- better AI prompts
+
+## Ideas
+
+- Use Turborepo

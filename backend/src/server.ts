@@ -1,20 +1,12 @@
 import express from "express";
-import {
-  readCaptionsFile,
-  runPy,
-  createStructure,
-  ytCaptionsScriptResultToText,
-  openAiStructureToMindmapData,
-  getTranscriptParts,
-  transformItem2,
-  ytCaptionsScriptResultToPromptContent,
-} from "./functions";
-import fs from "fs";
-import path from "path";
-import { openAiStructureToReactVisMindmapData } from "./reactVis";
-// const cors = require("cors");
+import { makeMindmap, runPy } from "./functions";
 import cors from "cors";
 import { MindmapNode } from "../../types";
+import { db } from "./db";
+import { z } from "zod";
+import { parseRequest } from "./utils";
+import { eq } from "drizzle-orm";
+import { mindmaps } from "./schema";
 require("dotenv").config();
 
 const app = express();
@@ -22,10 +14,6 @@ const port = 3001;
 
 app.use(express.json());
 app.use(cors());
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 
 app.post("/get-video-transcript", (req, res) => {
   const videoId = req.body.videoId;
@@ -35,216 +23,58 @@ app.post("/get-video-transcript", (req, res) => {
   res.send("ok");
 });
 
-app.post("/transcript-to-text", (req, res) => {
-  const videoId = req.body.videoId;
+const makeMindmapSchema = z.object({ body: z.object({ videoId: z.string() }) });
 
-  const text = ytCaptionsScriptResultToText(readCaptionsFile(videoId));
+app.post("/mindmap", async (req, res) => {
+  const {
+    body: { videoId },
+  } = parseRequest(makeMindmapSchema, req);
 
-  // Check if the directory exists
-  if (!fs.existsSync(videoId)) {
-    // Create the directory if it doesn't
-    fs.mkdirSync(videoId, { recursive: true }); // `recursive: true` ensures parent directories are created if they don't exist
+  let mindmap = await db.query.mindmaps.findFirst({
+    where: eq(mindmaps.videoId, videoId),
+  });
+
+  if (mindmap) {
+    return res.json({ status: "ok", data: { mindmapId: mindmap.id } });
   }
 
-  // Write to the file
-  fs.writeFileSync(path.join(videoId, "1.txt"), text);
+  const created = await db
+    .insert(mindmaps)
+    .values({
+      videoId,
+      title: "title",
+      status: "fetchingTranscript",
+    })
+    .returning();
+  const mindmapId = created[0].id;
 
-  res.send(text);
+  res.json({ status: "ok", data: { mindmapId: mindmapId } });
+
+  // make mindmap
+  makeMindmap(mindmapId);
+
+  return;
 });
 
-app.post("/create-structure", async (req, res) => {
-  const videoId = req.body.videoId;
+// make one for fetching by videoId as well
+app.get("/mindmap/:mindmapId", async (req, res) => {
+  const mindmapId = req.params.mindmapId;
+  let mindmap = await db.query.mindmaps.findFirst({
+    where: eq(mindmaps.videoId, mindmapId),
+  });
 
-  const parts = getTranscriptParts(videoId);
-  const structure = await createStructure(parts);
-
-  fs.writeFileSync(
-    path.join(videoId, "structure.json"),
-    JSON.stringify(structure)
-  );
-
-  res.json(structure);
-});
-
-app.post("/create-mindmap-data", async (req, res) => {
-  const videoId = req.body.videoId;
-
-  const structure = openAiStructureToMindmapData(videoId);
-
-  try {
-    fs.writeFileSync(
-      path.join(videoId, "mindmap.json"),
-      JSON.stringify(structure, null, 2)
-    );
-
-    res.json(JSON.stringify(structure, null, 2));
-  } catch (e: any) {
-    console.log(e.message);
-    throw new Error();
+  if (mindmap) {
+    if (mindmap.status !== "ok") {
+      return res.json({ status: "ok", data: { status: mindmap.status } });
+    } else {
+      return res.json({
+        status: "ok",
+        data: { status: mindmap.status, mindmapData: mindmap.structure },
+      });
+    }
+  } else {
+    return res.status(404).json({ status: "error", data: { mindmapId: null } });
   }
-});
-
-app.post("/create-mindmap-data2", async (req, res) => {
-  const videoId = req.body.videoId;
-
-  const structure = openAiStructureToReactVisMindmapData(videoId);
-
-  try {
-    fs.writeFileSync(
-      path.join(videoId, "mindmap2.json"),
-      JSON.stringify(structure, null, 2)
-    );
-
-    res.json(JSON.stringify(structure, null, 2));
-  } catch (e: any) {
-    console.log(e.message);
-    throw new Error();
-  }
-});
-
-app.get("/mindmap-data/:videoId", async (req, res) => {
-  const videoId = req.params.videoId;
-
-  const structure = JSON.parse(
-    fs.readFileSync(path.join(videoId, "mindmap.json"), "utf-8")
-  );
-
-  res.json(structure);
-});
-
-// app.post("/make-mindmap/:videoId", async (req, res) => {
-//   const videoId = req.params.videoId;
-
-//   if (fs.existsSync(path.join(videoId, "mindmap.json"))) {
-//     const result = JSON.parse(
-//       fs.readFileSync(path.join(videoId, "mindmap.json"), "utf-8")
-//     );
-
-//     console.log("--- sending cached");
-
-//     return res.json(result);
-//   }
-
-//   console.log(`--- mindmap creation for ${videoId} starting`);
-
-//   const transcript = await runPy(videoId);
-
-//   // Check if the directory exists
-//   if (!fs.existsSync(videoId)) {
-//     // Create the directory if it doesn't
-//     fs.mkdirSync(videoId, { recursive: true }); // `recursive: true` ensures parent directories are created if they don't exist
-//   }
-
-//   fs.writeFileSync(path.join(videoId, "1.txt"), transcript.toString());
-
-//   console.log(`--- transcript obtained`, transcript.toString().slice(0, 40));
-
-//   const text = ytCaptionsScriptResultToText(readCaptionsFile(videoId));
-
-//   fs.writeFileSync(path.join(videoId, "text.txt"), text);
-
-//   console.log(`--- text obtained`, text.slice(0, 40));
-
-//   const structure = await createStructure([text]);
-
-//   fs.writeFileSync(
-//     path.join(videoId, "structure.json"),
-//     JSON.stringify(structure)
-//   );
-
-//   console.log(`--- structure obtained`);
-
-//   const mindmapData = transformItem(structure, null);
-
-//   console.log(`--- mindmap data obtained`);
-
-//   fs.writeFileSync(
-//     path.join(videoId, "mindmap.json"),
-//     JSON.stringify(mindmapData, null, 2)
-//   );
-
-//   console.log("--- sending");
-
-//   return res.json(mindmapData);
-// });
-
-app.post("/make-mindmap-data/:videoId", async (req, res) => {
-  const videoId = req.params.videoId;
-
-  if (fs.existsSync(path.join(videoId, "transformed.json"))) {
-    const result = JSON.parse(
-      fs.readFileSync(path.join(videoId, "transformed.json"), "utf-8")
-    ) as MindmapNode;
-
-    console.log("--- sending cached");
-
-    return res.json(result);
-  }
-
-  console.log(`--- mindmap creation for ${videoId} starting`);
-
-  const transcript = await runPy(videoId);
-
-  // Check if the directory exists
-  if (!fs.existsSync(videoId)) {
-    // Create the directory if it doesn't
-    fs.mkdirSync(videoId, { recursive: true }); // `recursive: true` ensures parent directories are created if they don't exist
-  }
-
-  fs.writeFileSync(path.join(videoId, "1.txt"), JSON.stringify(transcript));
-
-  console.log(
-    `--- transcript obtained`,
-    JSON.stringify(transcript).slice(0, 40)
-  );
-
-  // const text = ytCaptionsScriptResultToText(readCaptionsFile(videoId));
-
-  const promtContent = ytCaptionsScriptResultToPromptContent(
-    readCaptionsFile(videoId)
-  );
-
-  fs.writeFileSync(
-    path.join(videoId, "prompt-content.json"),
-    JSON.stringify(promtContent)
-  );
-
-  console.log(`--- text obtained`, promtContent.slice(0, 40));
-
-  const structure = await createStructure([JSON.stringify(promtContent)]);
-
-  fs.writeFileSync(
-    path.join(videoId, "structure.json"),
-    JSON.stringify(structure)
-  );
-  console.log(`--- structure obtained`);
-
-  const transformed = transformItem2(structure, "1");
-
-  fs.writeFileSync(
-    path.join(videoId, "transformed.json"),
-    JSON.stringify(transformed)
-  );
-
-  console.log("--- sending");
-
-  return res.json(transformed);
-});
-
-app.post("/test", async (req, res) => {
-  const videoId = "2NZMaI-HeNU";
-
-  const structure = JSON.parse(
-    fs.readFileSync(path.join(videoId, "structure.json"), "utf-8")
-  );
-
-  const transformed = transformItem2(structure, "1");
-
-  fs.writeFileSync(
-    path.join(videoId, "transformed.json"),
-    JSON.stringify(transformed)
-  );
-  return res.json(transformed);
 });
 
 app.listen(port, () => {

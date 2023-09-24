@@ -7,6 +7,9 @@ import {
   getMindMapJsonFromOpenApiInitial,
   getMindMapJsonFromOpenApiNext,
 } from "./gpt4";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
+import { mindmaps } from "./schema";
 
 type ResStructure = {
   duration: number;
@@ -220,4 +223,65 @@ export async function runPy(videoId: string) {
       console.log(`Python script exited with code ${code}`);
     });
   });
+}
+
+export async function makeMindmap(mindmapId: number) {
+  let mindmap = await db.query.mindmaps.findFirst({
+    where: eq(mindmaps.id, mindmapId),
+  });
+  if (!mindmap) {
+    throw new Error("Mindmap not found");
+  } else if (mindmap.status === "ok") {
+    return;
+  }
+
+  if (mindmap.status === "error") {
+    const transcript = await runPy(mindmap.videoId);
+
+    const res = await db
+      .update(mindmaps)
+      .set({
+        transcript: JSON.stringify(transcript),
+        status: "fetchingGptResponse",
+      })
+      .where(eq(mindmaps.id, mindmapId))
+      .returning();
+
+    mindmap = res[0];
+  }
+
+  if (mindmap.status === "fetchingGptResponse") {
+    const promtContent = ytCaptionsScriptResultToPromptContent(
+      mindmap.gptResponse as ResStructure
+    );
+    const structure = await createStructure([JSON.stringify(promtContent)]);
+
+    const res = await db
+      .update(mindmaps)
+      .set({
+        gptResponse: JSON.stringify(structure),
+        status: "generatingFinalStructure",
+      })
+      .where(eq(mindmaps.id, mindmapId))
+      .returning();
+
+    mindmap = res[0];
+  }
+
+  if (mindmap.status === "generatingFinalStructure") {
+    const transformed = transformItem2(mindmap.gptResponse as MindmapNode, "1");
+
+    const res = await db
+      .update(mindmaps)
+      .set({
+        structure: JSON.stringify(transformed),
+        status: "ok",
+      })
+      .where(eq(mindmaps.id, mindmapId))
+      .returning();
+
+    mindmap = res[0];
+  }
+
+  return mindmap;
 }

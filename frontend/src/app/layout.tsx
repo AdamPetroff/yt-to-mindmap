@@ -1,8 +1,17 @@
+import Providers from "@/components/Providers";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Raleway, Roboto } from "next/font/google";
+import Example from "@/components/Header";
+import { cn } from "@/lib/utils";
+import Modal from "@/components/Modal";
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"], variable: "--raleway" });
+const roboto = Roboto({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  variable: "--roboto",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +24,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html className={cn(raleway.variable, roboto.variable)} lang="en">
+      <body>
+        <Modal />
+        {/* <span className={cn(roboto.variable, raleway.variable)}></span> */}
+        <Providers>
+          <Example />
+          <div className="container">{children}</div>
+        </Providers>
+      </body>
     </html>
   );
 }

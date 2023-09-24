@@ -35,6 +35,29 @@ services:
     networks:
       - my_network
 
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mindmap
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: adminpassword
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
   # Add more containers below (nginx, postgres, etc.)
 
 # Define a network, which allows containers to communicate
@@ -42,3 +65,7 @@ services:
 networks:
   my_network:
     external: true
+
+volumes:
+  postgres-data:
+  pgadmin-data:

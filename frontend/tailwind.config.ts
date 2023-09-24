@@ -1,3 +1,5 @@
+import { fontFamily } from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -8,6 +10,9 @@ module.exports = {
     "./src/**/*.{ts,tsx}",
   ],
   theme: {
+    fontFamily: {
+      roboto: ["var(--roboto)", ...fontFamily.sans],
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -16,6 +21,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--raleway)", ...fontFamily.sans],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -32,5 +40,6 @@ module.exports = {
       },
     },
   },
+
   plugins: [require("tailwindcss-animate")],
 };
