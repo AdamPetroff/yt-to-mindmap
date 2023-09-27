@@ -15,3 +15,15 @@ export type MindmapItem = {
 };
 
 export type MindmapData = { root: string; items: Record<string, MindmapItem> };
+
+type Status =
+  | "error"
+  | "fetchingTranscript"
+  | "fetchingGptResponse"
+  | "generatingFinalStructure"
+  | "ok";
+
+export type GetMindmapEndpointResponse = {
+  status: "ok";
+  data: { status: Status; mindmapData: MindmapItem };
+};

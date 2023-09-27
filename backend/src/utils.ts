@@ -1,5 +1,5 @@
 import { AnyZodObject, ZodError, z } from "zod";
-import { Request } from "express"
+import { Request } from "express";
 
 export class RequestParseError extends Error {}
 
@@ -9,6 +9,7 @@ export function parseRequest<T extends AnyZodObject>(
   req: Request
 ): z.infer<T> {
   try {
+    console.log(req.body);
     return schema.parse(req);
   } catch (error) {
     if (error instanceof ZodError) {

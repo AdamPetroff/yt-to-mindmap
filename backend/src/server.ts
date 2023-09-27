@@ -15,6 +15,10 @@ const port = 3001;
 app.use(express.json());
 app.use(cors());
 
+app.get("/hello-world", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.post("/get-video-transcript", (req, res) => {
   const videoId = req.body.videoId;
 
@@ -26,6 +30,7 @@ app.post("/get-video-transcript", (req, res) => {
 const makeMindmapSchema = z.object({ body: z.object({ videoId: z.string() }) });
 
 app.post("/mindmap", async (req, res) => {
+  console.log(req.body);
   const {
     body: { videoId },
   } = parseRequest(makeMindmapSchema, req);
@@ -58,9 +63,32 @@ app.post("/mindmap", async (req, res) => {
 
 // make one for fetching by videoId as well
 app.get("/mindmap/:mindmapId", async (req, res) => {
-  const mindmapId = req.params.mindmapId;
+  const mindmapId = Number(req.params.mindmapId);
+  if (isNaN(mindmapId)) {
+    return res.status(400).json({ status: "error", data: { mindmapId: null } });
+  }
   let mindmap = await db.query.mindmaps.findFirst({
-    where: eq(mindmaps.videoId, mindmapId),
+    where: eq(mindmaps.id, mindmapId),
+  });
+
+  if (mindmap) {
+    if (mindmap.status !== "ok") {
+      return res.json({ status: "ok", data: { status: mindmap.status } });
+    } else {
+      return res.json({
+        status: "ok",
+        data: { status: mindmap.status, mindmapData: mindmap.structure },
+      });
+    }
+  } else {
+    return res.status(404).json({ status: "error", data: { mindmapId: null } });
+  }
+});
+
+app.get("/mindmap/video/:videoId", async (req, res) => {
+  const videoId = req.params.videoId;
+  let mindmap = await db.query.mindmaps.findFirst({
+    where: eq(mindmaps.videoId, videoId),
   });
 
   if (mindmap) {

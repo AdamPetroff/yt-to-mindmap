@@ -1,3 +1,7 @@
+## What is this?
+
+tbd
+
 ## Prerequisites
 
 Install [Docker Desktop](https://docs.docker.com/get-docker) for Mac, Windows, or Linux. Docker Desktop includes Docker Compose as part of the installation.
@@ -66,14 +70,24 @@ docker kill $(docker ps -aq) && docker rm $(docker ps -aq)
 docker system prune -af --volumes
 ```
 
+## Technical features
+
+- Dockerized app with a frontend and backend services which share typescript types. Dev and prod versions.
+- Next.js frontend with typescript, tailwindcss, app router (NEXT 13.4), server-side rendering with combined fetching (first time fetches data on server, then on client).
+
 ## TODO
 
-- Proper backend endpoints
-- Connect frontend to backend
-- design
-- animation transitions
-- better AI prompts
+- [x] Proper backend endpoints
+- [ ] Connect frontend to backend
+- [ ] design
+- [ ] animation transitions
+- [ ] better AI prompts
+- [ ] authentication
+- [ ] landing page
+
+- [ ] Docker setup with separate API service is an overkill rn. Maybe use Next.js API routes instead, would simplify and improve performance a little bit.
 
 ## Ideas
 
 - Use Turborepo
+- Use NEXT server actions (experimental)

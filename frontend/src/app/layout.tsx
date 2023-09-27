@@ -6,12 +6,12 @@ import Example from "@/components/Header";
 import { cn } from "@/lib/utils";
 import Modal from "@/components/Modal";
 
-const raleway = Raleway({ subsets: ["latin"], variable: "--raleway" });
-const roboto = Roboto({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  variable: "--roboto",
-});
+// const raleway = Raleway({ subsets: ["latin"], variable: "--raleway" });
+// const roboto = Roboto({
+//   weight: ["400", "500"],
+//   subsets: ["latin"],
+//   variable: "--roboto",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,14 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={cn(raleway.variable, roboto.variable)} lang="en">
+    <html lang="en" className="">
       <body>
-        <Modal />
+        {/* <Modal /> */}
         {/* <span className={cn(roboto.variable, raleway.variable)}></span> */}
-        <Providers>
-          <Example />
-          <div className="container">{children}</div>
-        </Providers>
+        {/* <Providers>
+          <Example /> */}
+        <div className="container">{children}</div>
+        {/* </Providers> */}
       </body>
     </html>
   );
