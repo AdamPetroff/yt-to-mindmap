@@ -1,0 +1,10 @@
+{
+  "name": "my-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./monotypes.ts",
+  "types": "./monotypes.ts",
+  "private": true,
+  "author": "",
+  "license": "ISC"
+}
