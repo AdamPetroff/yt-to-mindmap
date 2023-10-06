@@ -2,16 +2,16 @@ import Providers from "@/components/Providers";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Raleway, Roboto } from "next/font/google";
-import Example from "@/components/Header";
+import Header from "@/components/Header";
 import { cn } from "@/lib/utils";
 import Modal from "@/components/Modal";
 
-// const raleway = Raleway({ subsets: ["latin"], variable: "--raleway" });
-// const roboto = Roboto({
-//   weight: ["400", "500"],
-//   subsets: ["latin"],
-//   variable: "--roboto",
-// });
+const raleway = Raleway({ subsets: ["latin"], variable: "--raleway" });
+const roboto = Roboto({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  variable: "--roboto",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,14 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="">
+    <html lang="en" className={`${roboto.variable} ${raleway.variable}`}>
       <body>
-        {/* <Modal /> */}
-        {/* <span className={cn(roboto.variable, raleway.variable)}></span> */}
-        {/* <Providers>
-          <Example /> */}
-        <div className="container">{children}</div>
-        {/* </Providers> */}
+        <Modal />
+        <span className={cn(roboto.variable)}></span>
+        <Providers>
+          <Header />
+          <div className="container">{children}</div>
+        </Providers>
       </body>
     </html>
   );

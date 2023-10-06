@@ -25,5 +25,20 @@ type Status =
 
 export type GetMindmapEndpointResponse = {
   status: "ok";
-  data: { status: Status; mindmapData: MindmapItem };
+  data: { status: Status; mindmapData: MindmapData; videoId: string };
+};
+
+export type GetMindmapListEndpointResponse = {
+  status: "ok";
+  data: {
+    mindmapList: {
+      title: string;
+      description: string | null;
+      id: number;
+      videoId: string;
+      spentTokens: number | null;
+      nOfNodes: number | null;
+      createdAt: Date;
+    }[];
+  };
 };

@@ -69,17 +69,12 @@ export function getTranscriptParts(dir: string) {
 }
 
 export async function createStructure(parts: string[]) {
-  // const parts = getTranscriptParts(videoId);
-
   if (parts.length === 0) {
     throw new Error("No parts");
   } else if (parts.length === 1) {
     return await getMindMapJsonFromOpenApiInitial(parts[0]);
   } else {
-    console.log(`Part 1 started`);
     let result = await getMindMapJsonFromOpenApiInitial(parts[0]);
-    console.log(`Part 1 done`);
-    fs.writeFileSync(`temp/temp-${0}.json`, JSON.stringify(result));
 
     for (let i = 1; i < parts.length; i++) {
       const part = parts[i];
@@ -89,7 +84,6 @@ export async function createStructure(parts: string[]) {
       console.log(`Part ${i + 1} done`);
 
       result = res;
-      fs.writeFileSync(`temp/temp-${i}.json`, JSON.stringify(res));
     }
 
     return result;
@@ -206,12 +200,10 @@ export async function runPy(videoId: string) {
       `${videoId}.json`,
     ]);
 
+    let output = "";
+
     pythonProcess.stdout.on("data", (data) => {
-      // console.log(`Python Output: ${data}`);
-
-      console.log((data.toString() as string).slice(0, 100));
-
-      resolve(JSON.parse(data));
+      output += data.toString();
     });
 
     pythonProcess.stderr.on("data", (data) => {
@@ -219,7 +211,11 @@ export async function runPy(videoId: string) {
     });
 
     pythonProcess.on("close", (code) => {
-      // resolve();
+      if (output) {
+        resolve(JSON.parse(output));
+      } else {
+        reject();
+      }
       console.log(`Python script exited with code ${code}`);
     });
   });
@@ -235,13 +231,14 @@ export async function makeMindmap(mindmapId: number) {
     return;
   }
 
-  if (mindmap.status === "error") {
+  if (mindmap.status === "error" || mindmap.status === "fetchingTranscript") {
     const transcript = await runPy(mindmap.videoId);
 
+    console.log(typeof transcript, transcript);
     const res = await db
       .update(mindmaps)
       .set({
-        transcript: JSON.stringify(transcript),
+        transcript: transcript,
         status: "fetchingGptResponse",
       })
       .where(eq(mindmaps.id, mindmapId))
@@ -252,14 +249,19 @@ export async function makeMindmap(mindmapId: number) {
 
   if (mindmap.status === "fetchingGptResponse") {
     const promtContent = ytCaptionsScriptResultToPromptContent(
-      mindmap.gptResponse as ResStructure
+      mindmap.transcript as ResStructure
     );
-    const structure = await createStructure([JSON.stringify(promtContent)]);
+    console.log("calling gpt4");
+    const { spentTokens, parsedJson } = await createStructure([
+      JSON.stringify(promtContent),
+    ]);
+    console.log("gpt4 done");
 
     const res = await db
       .update(mindmaps)
       .set({
-        gptResponse: JSON.stringify(structure),
+        gptResponse: parsedJson,
+        spentTokens: spentTokens,
         status: "generatingFinalStructure",
       })
       .where(eq(mindmaps.id, mindmapId))
@@ -274,7 +276,9 @@ export async function makeMindmap(mindmapId: number) {
     const res = await db
       .update(mindmaps)
       .set({
-        structure: JSON.stringify(transformed),
+        structure: transformed,
+        nOfNodes: Object.keys(transformed.items).length,
+        description: transformed.items[transformed.root].description,
         status: "ok",
       })
       .where(eq(mindmaps.id, mindmapId))

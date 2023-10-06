@@ -31,7 +31,7 @@ export default function SearchPage() {
               data: { mindmapId: string };
             };
 
-            router.push(`/video/${mindmapId}`);
+            router.push(`/mindmap/${mindmapId}`);
           }}
         >
           <MagnifyingGlassIcon className="h-5 w-5" />

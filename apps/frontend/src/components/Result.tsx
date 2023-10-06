@@ -4,18 +4,22 @@ import { API_URL } from "@/constants";
 import { useQuery } from "react-query";
 import { GetMindmapEndpointResponse, MindmapItem } from "my-types";
 import { notFound } from "next/navigation";
+import Mindmap from "./Mindmap";
 
 export default function Result({
-  mindmapId,
+  identifier,
 }: {
-  mindmapId: string;
+  identifier: ["videoId", string] | ["mindmapId", string];
   initData?: MindmapItem;
 }) {
   const { status, data } = useQuery(
-    "result",
+    ["result", identifier[1]],
     async () => {
       try {
-        const result = await fetch(`${API_URL}mindmap/video/${mindmapId}`);
+        const result =
+          identifier[0] === "mindmapId"
+            ? await fetch(`${API_URL}mindmap/${identifier[1]}`)
+            : await fetch(`${API_URL}mindmap/video/${identifier[1]}`);
 
         const data = (await result.json()) as GetMindmapEndpointResponse;
 
@@ -32,7 +36,7 @@ export default function Result({
         if (typeof data === "object" && data.data.status === "ok") {
           return false;
         }
-        return 1000;
+        return 3000;
       },
     },
   );
@@ -43,5 +47,11 @@ export default function Result({
     notFound();
   }
 
-  return <div>{status}</div>;
+  if (data?.data.status === "ok") {
+    return (
+      <Mindmap mindmap={data.data.mindmapData} videoId={data.data.videoId} />
+    );
+  }
+
+  return <div>{data?.data?.status}</div>;
 }

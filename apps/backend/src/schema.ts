@@ -1,6 +1,6 @@
 import {
   integer,
-  json,
+  jsonb,
   pgEnum,
   pgTable,
   serial,
@@ -9,6 +9,7 @@ import {
   uniqueIndex,
   varchar,
 } from "drizzle-orm/pg-core";
+import { PythonScriptResponse } from "./functions";
 
 // declaring enum in database
 export const statusEnum = pgEnum("status", [
@@ -25,10 +26,13 @@ export const mindmaps = pgTable(
     id: serial("id").primaryKey(),
     videoId: varchar("video_id", { length: 256 }).notNull(),
     title: varchar("title", { length: 256 }).notNull(),
+    description: text("description"),
+    spentTokens: integer("spent_tokens").default(0),
+    nOfNodes: integer("n_of_nodes").default(0),
     createdAt: timestamp("created_at").defaultNow().notNull(),
-    transcript: text("transcript"),
-    gptResponse: json("gpt_response"),
-    structure: json("structure"),
+    transcript: jsonb("transcript").$type<PythonScriptResponse | null>(),
+    gptResponse: jsonb("gpt_response"),
+    structure: jsonb("structure"),
     status: statusEnum("status"),
   },
   (mindmaps) => {

@@ -4,8 +4,10 @@ import cors from "cors";
 import { db } from "./db";
 import { z } from "zod";
 import { parseRequest } from "./utils";
-import { eq } from "drizzle-orm";
+import { eq, and, isNotNull } from "drizzle-orm";
 import { mindmaps } from "./schema";
+import testTemperatures from "./testTemperature";
+import { GetMindmapListEndpointResponse } from "my-types";
 require("dotenv").config();
 
 const app = express();
@@ -29,7 +31,6 @@ app.post("/get-video-transcript", (req, res) => {
 const makeMindmapSchema = z.object({ body: z.object({ videoId: z.string() }) });
 
 app.post("/mindmap", async (req, res) => {
-  console.log(req.body);
   const {
     body: { videoId },
   } = parseRequest(makeMindmapSchema, req);
@@ -39,6 +40,7 @@ app.post("/mindmap", async (req, res) => {
   });
 
   if (mindmap) {
+    makeMindmap(mindmap.id);
     return res.json({ status: "ok", data: { mindmapId: mindmap.id } });
   }
 
@@ -50,6 +52,7 @@ app.post("/mindmap", async (req, res) => {
       status: "fetchingTranscript",
     })
     .returning();
+
   const mindmapId = created[0].id;
 
   res.json({ status: "ok", data: { mindmapId: mindmapId } });
@@ -60,7 +63,27 @@ app.post("/mindmap", async (req, res) => {
   return;
 });
 
-// make one for fetching by videoId as well
+app.get("/mindmap", async (req, res) => {
+  const mindmapList = await db
+    .select({
+      title: mindmaps.title,
+      description: mindmaps.description,
+      id: mindmaps.id,
+      videoId: mindmaps.videoId,
+      spentTokens: mindmaps.spentTokens,
+      nOfNodes: mindmaps.nOfNodes,
+      createdAt: mindmaps.createdAt,
+      status: mindmaps.status,
+    })
+    .from(mindmaps)
+    .where(and(eq(mindmaps.status, "ok"), isNotNull(mindmaps.description)));
+
+  res.json({
+    status: "ok",
+    data: { mindmapList },
+  } satisfies GetMindmapListEndpointResponse);
+});
+
 app.get("/mindmap/:mindmapId", async (req, res) => {
   const mindmapId = Number(req.params.mindmapId);
   if (isNaN(mindmapId)) {
@@ -76,7 +99,11 @@ app.get("/mindmap/:mindmapId", async (req, res) => {
     } else {
       return res.json({
         status: "ok",
-        data: { status: mindmap.status, mindmapData: mindmap.structure },
+        data: {
+          status: mindmap.status,
+          mindmapData: mindmap.structure,
+          videoId: mindmap.videoId,
+        },
       });
     }
   } else {
@@ -102,6 +129,11 @@ app.get("/mindmap/video/:videoId", async (req, res) => {
   } else {
     return res.status(404).json({ status: "error", data: { mindmapId: null } });
   }
+});
+
+app.post("/test", (req, res) => {
+  testTemperatures();
+  res.json({ status: "ok" });
 });
 
 app.listen(port, () => {

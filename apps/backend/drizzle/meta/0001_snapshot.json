@@ -1,8 +1,8 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "49708be9-1126-441f-a557-6cc2743153d2",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "54ade888-3b9e-4d26-a692-227826a5bdc1",
+  "prevId": "49708be9-1126-441f-a557-6cc2743153d2",
   "tables": {
     "mindmaps": {
       "name": "mindmaps",
@@ -35,19 +35,19 @@
         },
         "transcript": {
           "name": "transcript",
-          "type": "json",
+          "type": "jsonb",
           "primaryKey": false,
           "notNull": false
         },
         "gpt_response": {
           "name": "gpt_response",
-          "type": "json",
+          "type": "jsonb",
           "primaryKey": false,
           "notNull": false
         },
         "structure": {
           "name": "structure",
-          "type": "json",
+          "type": "jsonb",
           "primaryKey": false,
           "notNull": false
         },

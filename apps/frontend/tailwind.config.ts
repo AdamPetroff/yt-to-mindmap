@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     fontFamily: {
       roboto: ["var(--roboto)", ...fontFamily.sans],
+      raleway: ["var(--raleway)", ...fontFamily.sans],
     },
     container: {
       center: true,

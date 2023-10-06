@@ -1,7 +1,8 @@
 "use client";
+import Link from "next/link";
 import { Fragment, useState } from "react";
 
-export default function Example() {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -12,7 +13,7 @@ export default function Example() {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">MindmapGPT</span>
             <img className="h-16 w-auto rotate-90" src="/icon-1.svg" alt="" />
           </a>
         </div>
@@ -27,21 +28,24 @@ export default function Example() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <a
-            href="#"
+          <Link
+            href="/"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Video List
+          </Link>
+          <Link
+            href="/search"
             className="font-roboto text-sm font-semibold leading-6 text-gray-900"
           >
-            Features
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
-          </a>
-          <a
+            Search
+          </Link>
+          {/* <a
             href="#"
             className="font-sans text-sm font-semibold leading-6 text-gray-900"
           >
             Company
-          </a>
+          </a> */}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
