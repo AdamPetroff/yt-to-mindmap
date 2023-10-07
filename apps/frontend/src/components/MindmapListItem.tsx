@@ -1,5 +1,8 @@
 import { GetMindmapListEndpointResponse } from "my-types";
-import YTVideoThumbprint from "./YTVideoThumbprint";
+import YTVideoThumbprint, {
+  getYTVideoThumbprintSrc,
+} from "./YTVideoThumbprint";
+import Image from "next/image";
 
 export default function MindmapListItem({
   mindmapItem,
@@ -9,15 +12,19 @@ export default function MindmapListItem({
   return (
     <a
       href={`/mindmap/${mindmapItem.id}`}
-      className="flex w-full cursor-pointer items-stretch gap-4 border p-2 hover:bg-slate-200"
+      className="flex w-full cursor-pointer items-stretch rounded border hover:bg-slate-200 active:bg-slate-300"
     >
-      <YTVideoThumbprint
-        width={100}
-        height={60}
-        quality="low"
-        vidId={mindmapItem.videoId}
+      <Image
+        width={140}
+        height={80}
+        alt={mindmapItem.title}
+        src={getYTVideoThumbprintSrc({
+          vidId: mindmapItem.videoId,
+          quality: "low",
+        })}
+        className="rounded-s"
       />
-      <div className="flex flex-col items-start gap-1">
+      <div className="flex flex-col items-start gap-1 p-2">
         <span className="font-roboto text-xl text-slate-800">
           {mindmapItem.title}
         </span>

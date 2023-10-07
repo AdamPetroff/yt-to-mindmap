@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 import { Fragment, useState } from "react";
+import Link from "./Link";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +30,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:gap-x-12">
           <Link
             href="/"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="font-roboto text-sm font-semibold leading-6 text-gray-900"
           >
             Video List
           </Link>

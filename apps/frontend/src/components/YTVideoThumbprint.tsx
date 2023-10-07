@@ -6,22 +6,34 @@ const thumbprintFile = {
   high: "sddefault.jpg",
 };
 
+export function getYTVideoThumbprintSrc({
+  vidId,
+  quality,
+}: {
+  vidId: string;
+  quality: "low" | "medium" | "high";
+}) {
+  return `https://i.ytimg.com/vi/${vidId}/${thumbprintFile[quality]}`;
+}
+
 export default function YTVideoThumbprint({
   vidId,
   quality,
   width = 300,
   height = 200,
+  className,
 }: {
-  vidId: string;
-  quality: "low" | "medium" | "high";
   width?: number;
   height?: number;
-}) {
-  const thumbprintUrl = `https://i.ytimg.com/vi/${vidId}/${thumbprintFile[quality]}`;
-
+  className?: string;
+} & Parameters<typeof getYTVideoThumbprintSrc>[0]) {
   return (
-    <div>
-      <Image width={width} height={height} src={thumbprintUrl} alt={vidId} />
-    </div>
+    <Image
+      width={width}
+      height={height}
+      src={getYTVideoThumbprintSrc({ quality, vidId })}
+      alt={vidId}
+      className={className}
+    />
   );
 }
