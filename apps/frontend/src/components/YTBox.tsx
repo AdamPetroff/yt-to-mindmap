@@ -8,8 +8,8 @@ export default function YTBox({
   start: number;
 }) {
   const opts = {
-    height: "390",
-    width: "640",
+    // height: "390",
+    // width: "640",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 0,

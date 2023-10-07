@@ -698,6 +698,11 @@
   resolved "https://registry.yarnpkg.com/@types/dagre/-/dagre-0.7.50.tgz#0c49746a0b3c63b75c4d1f5031fad522cf852a62"
   integrity sha512-3HxPUil6GwbcO+q3WxZhM6XMSXYaiXjjzKUDYsGk2tqP5Ko2WpN71I8g1kXLgX5nUkKg00+LlCTuaverWVADGA==
 
+"@types/debounce@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@types/debounce/-/debounce-1.2.2.tgz#8a9fd94003d874b56204526e6686b8a57dc4b278"
+  integrity sha512-ow0L7we5RXNQocEO9LNBRJCk/ecBc8M0aTg0DLrlg1nsnKAcjvFmYFUbsxujlrbngRslmKIA4mKoOxIJdUElhw==
+
 "@types/express-serve-static-core@^4.17.33":
   version "4.17.37"
   resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.37.tgz#7e4b7b59da9142138a2aaa7621f5abedce8c7320"
@@ -2337,6 +2342,11 @@ damerau-levenshtein@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz#b43d286ccbd36bc5b2f7ed41caf2d0aba1f8a6e7"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
+
+debounce@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
+  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.6:
   version "2.6.9"
@@ -5245,6 +5255,15 @@ postcss@^8.4.23:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
+postcss@^8.4.31:
+  version "8.4.31"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.31.tgz#92b451050a9f914da6755af352bdc0192508656d"
+  integrity sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==
+  dependencies:
+    nanoid "^3.3.6"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
+
 postgres-array@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/postgres-array/-/postgres-array-2.0.0.tgz#48f8fce054fbc69671999329b8834b772652d82e"
@@ -5434,6 +5453,17 @@ raw-body@2.5.1:
     http-errors "2.0.0"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+react-auto-resizable-box@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-auto-resizable-box/-/react-auto-resizable-box-1.0.6.tgz#516d408fa1e06cc7b09dbc1be584b365e47ecef8"
+  integrity sha512-4Q2s0MNHp612HvqF9xRYzgVOuyQcMkDgJurp2W1a43sDwWa6XSImS4h07Cmh43lp3RozsSE3cFqwX2GwVk3LPg==
+  dependencies:
+    clsx "^2.0.0"
+    debounce "^1.2.1"
+    framer-motion "^10.16.4"
+    postcss "^8.4.31"
+    tailwind-merge "^1.14.0"
 
 react-dom@18.2.0:
   version "18.2.0"
