@@ -4,7 +4,7 @@ import OpenAI from "openai";
 import fs from "fs";
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: OPENAI_API_KEY,
   // organization: "Personal",
 });
 
