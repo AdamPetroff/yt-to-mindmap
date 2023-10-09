@@ -11,6 +11,11 @@ You need to supply your own OpenAI API key. I'm using turborepo to manage the mo
 - Somethimes OpenAI API generated JSON has inconsistent structure.
 - The UI is too simple and design is non existent (I'm not a good designer rn)
 
+## This is how it looks right now
+
+Minimal UI (9.10.2023):
+![Example](./example.png)
+
 ## Prerequisites
 
 Install [Docker Desktop](https://docs.docker.com/get-docker) for Mac, Windows, or Linux. Docker Desktop includes Docker Compose as part of the installation.
