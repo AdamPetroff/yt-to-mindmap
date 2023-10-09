@@ -131,8 +131,7 @@ function useMeasure(
 
       Object.freeze(size);
       if (mounted.current && !areBoundsEqual(state.current.lastBounds, size))
-        console.log(state.current);
-      set((state.current.lastBounds = size));
+        set((state.current.lastBounds = size));
     };
     return [
       callback,

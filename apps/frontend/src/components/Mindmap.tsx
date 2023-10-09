@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { ReactElement, useRef, useState } from "react";
 import { MindmapData, MindmapItem } from "my-types";
 import YTBox from "./YTBox";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, Variants, motion } from "framer-motion";
 import ResizableBox, { ResizablePanelSimple } from "./ResizableBox";
 
 function MindmapCardView({
@@ -23,14 +23,42 @@ function MindmapCardView({
 }) {
   const isCurrentItem = item.id === currentItemId;
 
-  const [isBigVersion, setIsBigVersion] = useState(false);
+  const isBigVersion = isCurrentItem;
+
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  const variants: Variants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
 
   return (
-    <div>
+    <motion.div
+      className={cn(
+        isCurrentItem ? "absolute w-min" : "relative",
+        "flex cursor-pointer flex-col gap-4",
+      )}
+      ref={ref}
+      layout="position"
+      transition={{ duration: 1 }}
+      layoutId={item.id}
+      variants={variants}
+      initial={"initial"}
+      animate={"animate"}
+      exit={"exit"}
+    >
       <ResizablePanelSimple
-        className="rounded-md bg-slate-800"
-        onClick={() => setIsBigVersion(!isBigVersion)}
-        // className="flex-col gap-4"
+        duration={0.5}
+        className={cn(
+          "rounded-md",
+          isCurrentItem ? "bg-slate-800" : "bg-slate-500",
+        )}
+        onClick={() => {
+          if (!isCurrentItem) {
+            setCurrentItem(item);
+          }
+        }}
       >
         <div>
           <div
@@ -40,14 +68,28 @@ function MindmapCardView({
               // isBigVersion ? "min-h-[6rem]" : "min-h-[4rem]",
             )}
           >
-            <span className="font-roboto text-xl">{item.label}</span>
-            <AnimatePresence mode="sync">
+            <div className="flex items-center gap-2">
+              {isBigVersion && item.belongsTo && (
+                <Button
+                  onClick={() => {
+                    setCurrentItem(data.items[item.belongsTo!]);
+                  }}
+                >
+                  UP
+                </Button>
+              )}
+              <span className="whitespace-nowrap font-roboto text-xl ">
+                {item.label}
+              </span>
+            </div>
+            <AnimatePresence>
               {isBigVersion && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  // exit={{ opacity: 0 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.8 }}
+                  className="flex flex-col gap-4"
                 >
                   <span className="text-lg text-slate-200">
                     {item.description}
@@ -64,31 +106,25 @@ function MindmapCardView({
       </ResizablePanelSimple>
       {isBigVersion && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          variants={variants}
+          initial={"initial"}
+          animate={"animate"}
           transition={{ delay: 1 }}
-          className="flex justify-between gap-4"
+          className="flex flex-wrap justify-center gap-4"
         >
-          {item.children.map((childId) => {
-            const child = data.items[childId];
-            if (!child) {
-              throw new Error("Child not found");
-            }
-
-            return (
-              <div
-                key={child.id}
-                id={child.id}
-                className="flex min-h-[4rem] w-full min-w-[4rem] cursor-pointer flex-col items-center justify-center gap-4 rounded-sm border bg-slate-800 p-2 font-roboto text-lg text-white opacity-75 transition-all hover:bg-slate-900"
-                onClick={() => setCurrentItem(child)}
-              >
-                <span>{child.label}</span>
-              </div>
-            );
-          })}
+          {item.children.map((childId) => (
+            <MindmapCardView
+              key={childId}
+              item={data.items[childId]}
+              data={data}
+              setCurrentItem={setCurrentItem}
+              videoId={videoId}
+              currentItemId={currentItemId}
+            />
+          ))}
         </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 }
 
@@ -102,25 +138,29 @@ export default function Mindmap({
   const rootItem = mindmap.items[mindmap.root];
   const [currentItem, setCurrentItem] = useState(rootItem);
 
-  console.log(mindmap);
+  const cards = Object.values(mindmap.items).reduce<
+    Record<string, ReactElement>
+  >((acc, item) => {
+    return {
+      ...acc,
+      [item.id]: (
+        <MindmapCardView
+          key={item.id}
+          item={item}
+          currentItemId={currentItem.id}
+          data={mindmap}
+          setCurrentItem={setCurrentItem}
+          videoId={videoId}
+        />
+      ),
+    };
+  }, {});
+
   return (
     <div className="w-auto">
-      {currentItem.belongsTo && (
-        <Button
-          onClick={() => {
-            setCurrentItem(mindmap.items[currentItem.belongsTo!]);
-          }}
-        >
-          UP
-        </Button>
-      )}
-      <MindmapCardView
-        item={currentItem}
-        currentItemId={currentItem.id}
-        data={mindmap}
-        setCurrentItem={setCurrentItem}
-        videoId={videoId}
-      />
+      <div className="flex flex-wrap gap-2">
+        <AnimatePresence>{cards[currentItem.id]}</AnimatePresence>
+      </div>
     </div>
   );
 }

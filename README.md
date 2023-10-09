@@ -1,6 +1,15 @@
 ## What is this?
 
-tbd
+A system that uses AI to generate a mindmap from a youtube video. The idea was that if you don't feel like watching a whole 2+ hour podcast about health (Huberman Lab), you could use this system to generate a mindmap and you could go through all the topics and find what you're interested in. These long videos sometimes are annotated with chapters, but I felt like it's not enough.
+
+You need to supply your own OpenAI API key. I'm using turborepo to manage the monorepo and there is a typescript types package that is shared between the frontend and backend. There is a docker setup included for the postgres DB.
+
+## Limitations
+
+- The mindmaps don't include all the information, especially in longer videos.
+- Video length: videos around 10 minutes+ will break the backend, because the OpenAI API has a limit of 8000 tokens per request. and will not return a valid JSON.
+- Somethimes OpenAI API generated JSON has inconsistent structure.
+- The UI is too simple and design is non existent (I'm not a good designer rn)
 
 ## Prerequisites
 
@@ -8,86 +17,30 @@ Install [Docker Desktop](https://docs.docker.com/get-docker) for Mac, Windows, o
 
 ## Development
 
-First, run the development server:
+- `cd apps/backend && cp .env.example .env`
+- insert your OpenAI API key into the .env file
+- `yarn install`
+- `docker-compose up`
+- `yarn dev`
+- visit http://localhost:3000
 
-```bash
-# Create a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-docker network create my_network
-
-# Build dev
-docker compose -f docker-compose.dev.yml build
-
-# Up dev
-docker compose -f docker-compose.dev.yml up
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-## Production
-
-Multistage builds are highly recommended in production. Combined with the Next [Output Standalone](https://nextjs.org/docs/advanced-features/output-file-tracing#automatically-copying-traced-files) feature, only `node_modules` files required for production are copied into the final Docker image.
-
-First, run the production server (Final image approximately 110 MB).
-
-```bash
-# Create a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-docker network create my_network
-
-# Build prod
-docker compose -f docker-compose.prod.yml build
-
-# Up prod in detached mode
-docker compose -f docker-compose.prod.yml up -d
-```
-
-Alternatively, run the production server without without multistage builds (Final image approximately 1 GB).
-
-```bash
-# Create a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-docker network create my_network
-
-# Build prod without multistage
-docker compose -f docker-compose.prod-without-multistage.yml build
-
-# Up prod without multistage in detached mode
-docker compose -f docker-compose.prod-without-multistage.yml up -d
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-## Useful commands
-
-```bash
-# Stop all running containers
-docker kill $(docker ps -aq) && docker rm $(docker ps -aq)
-
-# Free space
-docker system prune -af --volumes
-```
-
-## Technical features
+<!-- ## Technical features
 
 - Dockerized app with a frontend and backend services which share typescript types. Dev and prod versions.
-- Next.js frontend with typescript, tailwindcss, app router (NEXT 13.4), server-side rendering with combined fetching (first time fetches data on server, then on client).
+- Next.js frontend with typescript, tailwindcss, app router (NEXT 13.4), server-side rendering with combined fetching (first time fetches data on server, then on client). -->
 
 ## TODO
 
 - [x] Proper backend endpoints
-- [ ] Connect frontend to backend
+- [x] Connect frontend to backend
 - [ ] design
-- [ ] animation transitions
+- [x] animation transitions (kind of done)
 - [ ] better AI prompts
 - [ ] authentication
 - [ ] landing page
-
-- [ ] Docker setup with separate API service is an overkill rn. Maybe use Next.js API routes instead, would simplify and improve performance a little bit.
+- [x] Turborepo
 
 ## Ideas
 
-- Use Turborepo
 - Use NEXT server actions (experimental)
+- ability to search string in the video transcript and jump to that point in the video
